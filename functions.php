@@ -1,6 +1,8 @@
 <?php
 
 wc_get_template( '/templates/hooks.php' );
+wc_get_template( '/templates/woo-functions.php' );
+
 
 // Регистрируем CSS
 function enqueue_styles() {
@@ -170,130 +172,4 @@ class wp_catalog_product_menu extends Walker_Nav_Menu  {
 
 
 
-
-
-
-/*Декларируем поддержку WooCommerce v.3.6.2*/
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
-	add_theme_support( 'woocommerce' );
-}
-
-
-// Регистрируем хуки дополнительных вкладок в админке страницы товара
-add_action( 'woocommerce_product_options_general_product_data', 'art_woo_add_video_fields' );
-add_action( 'woocommerce_product_options_general_product_data', 'art_woo_add_program_fields' );
-
-
-add_action( 'woocommerce_process_product_meta', 'art_woo_custom_video_save', 10 );
-add_action( 'woocommerce_process_product_meta', 'art_woo_custom_program_save', 15 );
-
-add_filter( 'woocommerce_product_tabs', 'woo_custom_product_tabs' );
-
-
-//Функции вывода функционала в админке для заполнения вкладок страницы товара
-function art_woo_add_video_fields() {
-	global $product, $post;
-	?>
-	<div class="options_group">
-		<h2><strong>Контент вкладки "Видео"</strong></h2>
-		<?php
-		wp_editor(get_post_meta( $post->ID, '_video_desc', true ), 'video_desc', array(
-			'wpautop'       => 1,
-			'media_buttons' => 1,
-			'textarea_name' => 'video_desc',
-			'textarea_rows' => 5,
-			'tabindex'      => null,
-			'editor_css'    => '<style>.quicktags-toolbar, .wp-editor-tools, .wp-editor-wrap, .wp-switch-editor {padding: 5px 10px;}</style>',
-			'editor_class'  => 'form-field',
-			'teeny'         => 0,
-			'dfw'           => 0,
-			'tinymce'       => 1,
-			'quicktags'     => 1,
-			'drag_drop_upload' => false
-		) );		
-		?>
-	</div>
-	<?php
-}
-
-function art_woo_add_program_fields() {
-	global $product, $post;
-	?>
-	<div class="options_group">
-		<h2><strong>Контент вкладки "ПО"</strong></h2>
-		<?php
-		wp_editor(get_post_meta( $post->ID, '_program_desc', true ), 'program_desc', array(
-			'wpautop'       => 1,
-			'media_buttons' => 1,
-			'textarea_name' => 'program_desc',
-			'textarea_rows' => 5,
-			'tabindex'      => null,
-			'editor_css'    => '<style>.quicktags-toolbar, .wp-editor-tools, .wp-editor-wrap, .wp-switch-editor {padding: 5px 10px;}</style>',
-			'editor_class'  => 'form-field',
-			'teeny'         => 0,
-			'dfw'           => 0,
-			'tinymce'       => 1,
-			'quicktags'     => 1,
-			'drag_drop_upload' => false
-		) );		
-		?>
-	</div>
-	<?php
-}
-
-
-//Сохранение дополнительных полей вкладок в админке страницы товара
-function art_woo_custom_video_save( $post_id ) {
-	$woocommerce_textarea = $_POST['video_desc'];
-	if ( ! empty( $woocommerce_textarea ) ) {
-		update_post_meta( $post_id, '_video_desc', $woocommerce_textarea );
-	}
-}
-
-function art_woo_custom_program_save( $post_id ) {
-	$woocommerce_textarea = $_POST['program_desc'];
-	if ( ! empty( $woocommerce_textarea ) ) {
-		update_post_meta( $post_id, '_program_desc', $woocommerce_textarea );
-	}
-}
-
-
-// Добавляем новые вкладки на странице товара
-
-function woo_custom_product_tabs( $tabs ) {
-	$tabs['video'] = array(
-		'title'     => 'Видео',
-		'priority'  => 10,
-		'callback'  => 'woo_video_tab_content'
-	);
-
-	$tabs['programm'] = array(
-		'title'     => 'ПО',
-		'priority'  => 11,
-		'callback'  => 'woo_program_tab_content'
-	);
-	unset($tabs['reviews']);
-	unset($tabs['description']['title']);
-	$tabs['description']['title'] = 'Полное описание';
-	return $tabs;
-}
-
-// Контент новых вкладок
-
-function woo_video_tab_content() {
-	global $post;
-	$video_desc= get_post_meta( $post->ID, '_video_desc', true );
-	?>
-	<p><?php echo $video_desc; ?></p>
-	<?php
-}
-
-function woo_program_tab_content() {
-	global $post;
-	$program_desc= get_post_meta( $post->ID, '_program_desc', true );
-	?>
-	<p><?php echo $program_desc; ?></p>
-	<?php
-}
 

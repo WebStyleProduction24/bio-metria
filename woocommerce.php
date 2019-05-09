@@ -1,5 +1,13 @@
-<?php get_header(); ?>
+<?php
 
-<?php woocommerce_content(); ?>
 
-<?php get_footer(); ?>
+global $post;
+
+
+get_header(); 
+
+woocommerce_content();
+get_footer();
+
+
+ ?>

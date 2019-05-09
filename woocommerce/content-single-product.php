@@ -32,7 +32,6 @@ if ( post_password_required() ) {
 }
 ?>
 
-
 <section class="main main_inner">
 
 	<div class="container">
