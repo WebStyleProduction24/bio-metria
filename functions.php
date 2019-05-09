@@ -1,5 +1,7 @@
 <?php
 
+wc_get_template( '/templates/hooks.php' );
+
 // Регистрируем CSS
 function enqueue_styles() {
 	wp_enqueue_style( 'whitesquare-style', get_stylesheet_uri());
@@ -177,11 +179,6 @@ function woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
 
-// Отключение хуков WooCommerce
-
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
-remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-
 
 // Регистрируем хуки дополнительных вкладок в админке страницы товара
 add_action( 'woocommerce_product_options_general_product_data', 'art_woo_add_video_fields' );
@@ -266,17 +263,19 @@ function art_woo_custom_program_save( $post_id ) {
 
 function woo_custom_product_tabs( $tabs ) {
 	$tabs['video'] = array(
-		'title'     => __( 'Видео', 'woocommerce' ),
+		'title'     => 'Видео',
 		'priority'  => 10,
 		'callback'  => 'woo_video_tab_content'
 	);
 
 	$tabs['programm'] = array(
-		'title'     => __( 'ПО', 'woocommerce' ),
+		'title'     => 'ПО',
 		'priority'  => 11,
 		'callback'  => 'woo_program_tab_content'
 	);
 	unset($tabs['reviews']);
+	unset($tabs['description']['title']);
+	$tabs['description']['title'] = 'Полное описание';
 	return $tabs;
 }
 
@@ -286,7 +285,6 @@ function woo_video_tab_content() {
 	global $post;
 	$video_desc= get_post_meta( $post->ID, '_video_desc', true );
 	?>
-	<h2>Видео</h2>
 	<p><?php echo $video_desc; ?></p>
 	<?php
 }
@@ -295,7 +293,6 @@ function woo_program_tab_content() {
 	global $post;
 	$program_desc= get_post_meta( $post->ID, '_program_desc', true );
 	?>
-	<h2>ПО</h2>
 	<p><?php echo $program_desc; ?></p>
 	<?php
 }
