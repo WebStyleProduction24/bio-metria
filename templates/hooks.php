@@ -11,8 +11,8 @@ add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_s
 
 
 // Регистрируем хуки дополнительных вкладок в админке страницы товара
-add_action( 'woocommerce_product_options_general_product_data', 'art_woo_add_video_fields' );
 add_action( 'woocommerce_product_options_general_product_data', 'art_woo_add_program_fields' );
+add_action( 'woocommerce_product_options_general_product_data', 'art_woo_add_video_fields' );
 
 
 add_action( 'woocommerce_process_product_meta', 'art_woo_custom_video_save', 10 );

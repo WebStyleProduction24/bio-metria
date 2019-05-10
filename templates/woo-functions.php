@@ -11,7 +11,7 @@ function art_woo_add_video_fields() {
 	global $product, $post;
 	?>
 	<div class="options_group">
-		<h2><strong>Контент вкладки "Видео"</strong></h2><p>
+		<h2><strong>Вкладка "Видео"</strong></h2><p>
 		<?php
 		wp_editor(get_post_meta( $post->ID, '_video_desc', true ), 'video_desc', array(
 			'wpautop'       => 1,
@@ -36,7 +36,7 @@ function art_woo_add_program_fields() {
 	global $product, $post;
 	?>
 	<div class="options_group">
-		<h2><strong>Контент вкладки "ПО"</strong></h2><p>
+		<h2><strong>Вкладка "Техническое описание"</strong></h2><p>
 		<?php
 		wp_editor(get_post_meta( $post->ID, '_program_desc', true ), 'program_desc', array(
 			'wpautop'       => 1,
@@ -79,13 +79,13 @@ function art_woo_custom_program_save( $post_id ) {
 function woo_custom_product_tabs( $tabs ) {
 	$tabs['video'] = array(
 		'title'     => 'Видео',
-		'priority'  => 10,
+		'priority'  => 11,
 		'callback'  => 'woo_video_tab_content'
 	);
 
 	$tabs['programm'] = array(
-		'title'     => 'ПО',
-		'priority'  => 11,
+		'title'     => 'Техническое описание',
+		'priority'  => 10,
 		'callback'  => 'woo_program_tab_content'
 	);
 	unset($tabs['reviews']);
@@ -138,8 +138,8 @@ function product_woo_add_custom_fields() {
 	// текстовое поле
 	woocommerce_wp_text_input( array(
 		'id'          => '_model_custom_woo',
-		'label'       => 'Модель',
-		'placeholder' => 'Модель',
+		'label'       => 'Модель продукта',
+		'placeholder' => 'Модель продукта',
 		'desc_tip'    => 'true',
 		'type'				=>	'text',
 		'description' => 'Введите модель продукта',
