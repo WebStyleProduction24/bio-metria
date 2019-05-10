@@ -23,6 +23,6 @@ global $post;
 
 ?>
 
-<?php the_content(); ?>
+<p><?php the_content(); ?></p>
 
 

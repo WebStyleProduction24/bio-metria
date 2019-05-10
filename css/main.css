@@ -4384,7 +4384,7 @@ body {
       text-transform: uppercase;
       border-bottom: solid 4px transparent;
       margin-right: 45px;
-      padding-bottom: 5px;
+      padding-bottom: 4px;
       cursor: pointer; }
       .product-tab__item-active {
         border-color: #4d7ead; }

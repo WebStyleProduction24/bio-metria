@@ -27,7 +27,6 @@ global $product;
 $post_thumbnail_id = $product->get_image_id();
 ?>
 
-<div class="product-view col-lg-9">
 	<div class="product-images">
 			<?php
 
@@ -38,4 +37,3 @@ $post_thumbnail_id = $product->get_image_id();
 			?>
 	</div>
 	<span class="product-images__info"></span>
-</div>

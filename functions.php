@@ -170,6 +170,8 @@ class wp_catalog_product_menu extends Walker_Nav_Menu  {
 
 } // Walker_Nav_Menu
 
+//Отображение кнопки "Консультация"
+function button_consultation (){
+	echo "<a class='btn btn_consultation' href='#'>Консультация</a>";
 
-
-
+}
