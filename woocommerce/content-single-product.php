@@ -30,7 +30,11 @@ if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 }
+
+get_header('shop');
+
 ?>
+
 
 <section class="main main_inner">
 
