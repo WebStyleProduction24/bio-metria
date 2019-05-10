@@ -171,3 +171,23 @@ function get_product_model() {
 		the_title( '<h1 class="product-desc__title">', '</h1>' );
 	}
 }
+
+//функция отображения слайдера в карточке товара
+function product_gallery_slider( $attachment_id) {
+	$html  = '';
+	$image = wp_get_attachment_image_src( $attachment_id, $size);
+	if ( $image ) {
+		list($src) = $image;
+		$default_attr = array(
+			'src'   => $src,
+		);
+
+		$attr = wp_parse_args( $attr, $default_attr );
+		$html = rtrim( "<img class='product-images__img' $hwstring" );
+		foreach ( $attr as $name => $value ) {
+			$html .= " $name=" . '"' . $value . '"';
+		}
+		$html .= ' />';
+	}
+	return $html;
+}
