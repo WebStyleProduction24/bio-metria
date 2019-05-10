@@ -37,4 +37,5 @@ $post_thumbnail_id = $product->get_image_id();
 
 			?>
 	</div>
+	<span class="product-images__info"></span>
 </div>
