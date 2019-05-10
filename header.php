@@ -8,10 +8,15 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<div class="wrapper">
-		<div class="container">
+	<?php
+	if ( is_product() ) {
 
-			<h1>Внимание! Сайт находится в режиме разработки</h1>
-			<h3><a href="/catalog">Перейти в каталог продукции</a></h3>
+		get_header('shop');
+	} else { ?>
+		<div class="wrapper">
+			<div class="container">
+				<h1>Извините! Страница находится в разработке</h1>
+				<h3><a href="/catalog">Перейти в каталог продукции</a></h3>
+			</div>
 		</div>
-	</div>
+		<?php } ?>

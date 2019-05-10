@@ -30,9 +30,6 @@ if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 }
-
-get_header('shop');
-
 ?>
 
 
@@ -85,8 +82,11 @@ get_header('shop');
 			 */
 			do_action( 'woocommerce_after_single_product_summary' );
 			?>
+			<a class="btn btn_back" onClick="history.back()">Назад в каталог</a>
 		</div>
 	</div>
 </section>
+
+<?php get_footer('shop'); ?>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
