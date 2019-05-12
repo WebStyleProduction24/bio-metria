@@ -8,8 +8,10 @@ wc_get_template( '/functions/woo-functions.php' );
 // Регистрируем CSS
 function enqueue_styles() {
 	wp_enqueue_style( 'whitesquare-style', get_stylesheet_uri());
-	wp_enqueue_style('font-style', 'http://fonts.googleapis.com/css?family=Oswald:400,300');
+	wp_enqueue_style('font-google-style', 'http://fonts.googleapis.com/css?family=Oswald:400,300');
 	wp_enqueue_style('fontawesome-style', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+	wp_enqueue_style('cloudflare-style', 'https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css');
+	wp_enqueue_style('font-main-style', get_template_directory_uri() . '/css/fonts.css');
 	wp_enqueue_style('widgets-style', get_template_directory_uri() . '/css/widgets.css');
 	wp_enqueue_style('main-style', get_template_directory_uri() . '/css/main.css');
 }
