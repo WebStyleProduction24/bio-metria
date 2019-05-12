@@ -3,9 +3,9 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=<?php bloginfo('charset'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name ="viewport" content="width=device-width, initial-scale=1">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="MobileOptimized" content="320">
+	<meta name ="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="MobileOptimized" content="320">
 	<title><?php wp_title('«', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<?php wp_head(); ?>
@@ -15,7 +15,15 @@
 	if ( is_product() ) {
 
 		get_header('shop');
-	} else { ?>
+	} else if ( is_front_page() ) { ?>
+		<div class="wrapper">
+			<div class="container">
+				<h1>Страница находится в режиме разработки</h1>
+				<h2>Приносим извинения за предоставленные неудобства</h2>
+				<h3><a href="/catalog">Перейти в каталог продукции</a></h3>
+			</div>
+		</div>
+	<?php } else { ?>
 		<div class="wrapper">
 			<div class="container">
 				<h1>Извините! Страница находится в разработке</h1>
