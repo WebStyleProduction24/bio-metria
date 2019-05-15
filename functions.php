@@ -63,10 +63,16 @@ function socials_float() {
 	wc_get_template('/socials_float.php');
 }
 
-
+//Добавляем класс к цитате слайдера предложений
 function get_excerpt_slider_of_offers() {
 	add_filter( "the_excerpt", "add_class_excerpt" );
 	function add_class_excerpt( $excerpt ) {
 		return str_replace( '<p>', '<p class="slider__text">', $excerpt );
 	}
 }
+
+//Добавляем класс к описанию категории в блоке "Программы и оборудование"
+	add_filter( "term_description", "add_class_term_description" );
+	function add_class_term_description( $term_description ) {
+		return str_replace( '<p>', '<p class="equipment-list__text">', $term_description );
+	}
