@@ -3,6 +3,7 @@
 wc_get_template( '/functions/menu.php' );
 wc_get_template( '/functions/hooks.php' );
 wc_get_template( '/functions/woo-functions.php' );
+wc_get_template( '/functions/post-type.php' );
 
 
 // Регистрируем CSS
@@ -36,19 +37,21 @@ function fontawesome_style_loader_tag( $html, $handle ) {
 add_filter( 'style_loader_tag', 'fontawesome_style_loader_tag', 10, 2 );
 
 // Регистрируем JS
-function enqueue_scripts () {
+function enqueue_scripts () {	
+
+	wp_deregister_script('jquery');
+	// wp_enqueue_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"), false, '1.12.2');
+	// wp_enqueue_script('jquery');
+	wp_enqueue_script('jquery-1.11.3-min-js', get_template_directory_uri() . '/js/jquery-1.11.3.min.js');
+	wp_enqueue_script('jquery-ui-min-js', get_template_directory_uri() . '/js/jquery-ui.min.js');
 	wp_enqueue_script('widgets-js', get_template_directory_uri() . '/js/widgets.js');
-	wp_enqueue_script('functions-js', get_template_directory_uri() . '/js/functions.js');
-	// wp_enqueue_script('jquery-1.11.3-min-js', get_template_directory_uri() . '/js/jquery-1.11.3.min.js');
-	// wp_enqueue_script('jquery-ui-min-js', get_template_directory_uri() . '/js/jquery-ui.min.js');
 	// iScroll
 	wp_enqueue_script('iscroll-min-js', 'https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js');
 	// drawer.js
 	wp_enqueue_script('drawer-min-js', 'https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js');
+	wp_enqueue_script('functions-js', get_template_directory_uri() . '/js/functions.js');
 }
-add_action('wp_enqueue_scripts', 'enqueue_scripts');
-
-
+add_action('wp_enqueue_scripts', 'enqueue_scripts', 9999);
 
 //Отображение кнопки "Консультация"
 function button_consultation (){
@@ -58,4 +61,12 @@ function button_consultation (){
 
 function socials_float() {
 	wc_get_template('/socials_float.php');
+}
+
+
+function get_excerpt_slider_of_offers() {
+	add_filter( "the_excerpt", "add_class_excerpt" );
+	function add_class_excerpt( $excerpt ) {
+		return str_replace( '<p>', '<p class="slider__text">', $excerpt );
+	}
 }

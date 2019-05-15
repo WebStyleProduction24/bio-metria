@@ -4153,42 +4153,56 @@ body {
       .slider__wrap {
         width: 100%;
         text-align: center;
-        max-width: 100%; } }
-  .slider__title {
-    font: 800 48px/1.2 'Geometria';
-    color: #fff;
-    opacity: .6;
-    text-transform: uppercase; }
-    .slider__title:after {
-      content: "";
-      display: block;
-      width: 260px;
-      background: rgba(255, 255, 255, 0.2);
-      height: 3px;
-      margin: 15px 0 21px; }
-      @media (max-width: 991px) {
+        max-width: 100%; 
+        }
+         }
+        .slider__title {
+          font: 800 48px/1.2 'Geometria';
+          color: #fff;
+          opacity: .6;
+          text-transform: uppercase; 
+        }
         .slider__title:after {
-          margin: 15px auto 21px; } }
-    @media (max-width: 600px) {
-      .slider__title {
-        font-size: 30px; } }
-    @media (max-width: 400px) {
-      .slider__title {
-        font-size: 25px; } }
-  .slider__text {
-    color: #fff;
-    line-height: 17px;
-    padding-bottom: 0; }
-  .slider__more {
-    color: #fff;
-    display: table;
-    margin: 32px 0 0 auto;
-    border: solid 1px #fff;
-    border-radius: 20px;
-    padding: 10px 31px; }
-    @media (max-width: 991px) {
-      .slider__more {
-        margin: 32px auto 0; } }
+          content: "";
+          display: block;
+          width: 260px;
+          background: rgba(255, 255, 255, 0.2);
+          height: 3px;
+          margin: 15px 0 21px;
+        }
+        @media (max-width: 991px) {
+          .slider__title:after {
+            margin: 15px auto 21px;
+          } 
+        }
+        @media (max-width: 600px) {
+          .slider__title {
+            font-size: 30px;
+          }
+        }
+        @media (max-width: 400px) {
+          .slider__title {
+            font-size: 25px;
+          }
+        }
+        .slider__text {
+          color: #fff;
+          line-height: 17px;
+          padding-bottom: 0; 
+        }
+        .slider__more {
+          color: #fff;
+          display: table;
+          margin: 32px 0 0 auto;
+          border: solid 1px #fff;
+          border-radius: 20px;
+          padding: 10px 31px;
+        }
+        @media (max-width: 991px) {
+          .slider__more {
+            margin: 32px auto 0;
+          }
+        }
   .slider .slick-dots {
     text-align: center;
     margin-top: 159px; }
