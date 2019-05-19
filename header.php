@@ -15,15 +15,7 @@
 	if ( is_product() ) {
 
 		get_header('shop');
-	} else if ( is_front_page() ) { ?>
-		<div class="wrapper">
-			<div class="container">
-				<h1>Страница находится в режиме разработки</h1>
-				<h2>Приносим извинения за предоставленные неудобства</h2>
-				<h3><a href="/catalog">Перейти в каталог продукции</a></h3>
-			</div>
-		</div>
-	<?php } else { ?>
+	} else if ( is_front_page() ) {} else { ?>
 		<div class="wrapper">
 			<div class="container">
 				<h1>Извините! Страница находится в разработке</h1>

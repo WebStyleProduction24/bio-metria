@@ -36,6 +36,10 @@ function fontawesome_style_loader_tag( $html, $handle ) {
 
 add_filter( 'style_loader_tag', 'fontawesome_style_loader_tag', 10, 2 );
 
+
+function my_scripts_method(){
+	wp_enqueue_script( 'jquery' );
+}
 // Регистрируем JS
 function enqueue_scripts () {	
 
@@ -44,14 +48,14 @@ function enqueue_scripts () {
 	// wp_enqueue_script('jquery');
 	wp_enqueue_script('jquery-1.11.3-min-js', get_template_directory_uri() . '/js/jquery-1.11.3.min.js');
 	wp_enqueue_script('jquery-ui-min-js', get_template_directory_uri() . '/js/jquery-ui.min.js');
-	wp_enqueue_script('widgets-js', get_template_directory_uri() . '/js/widgets.js');
+	wp_enqueue_script('custom_script',	get_template_directory_uri() . '/js/widgets.js', array(),	null, true);
 	// iScroll
 	wp_enqueue_script('iscroll-min-js', 'https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js');
 	// drawer.js
 	wp_enqueue_script('drawer-min-js', 'https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js');
 	wp_enqueue_script('functions-js', get_template_directory_uri() . '/js/functions.js');
 }
-add_action('wp_enqueue_scripts', 'enqueue_scripts', 9999);
+add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
 //Отображение кнопки "Консультация"
 function button_consultation (){
