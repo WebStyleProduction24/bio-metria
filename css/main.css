@@ -4203,15 +4203,19 @@ body {
             margin: 32px auto 0;
           }
         }
-  .slider .slick-dots {
-    text-align: center;
-    margin-top: 159px; }
-    @media (max-width: 991px) {
-      .slider .slick-dots {
-        margin-top: 60px; } }
-    .slider .slick-dots li {
-      display: inline-block;
-      margin: 0 3px; }
+        .slider .slick-dots {
+          text-align: center;
+          margin-top: 40px; 
+        }
+        @media (max-width: 991px) {
+          .slider .slick-dots {
+            margin-top: 60px; 
+          }
+        }
+        .slider .slick-dots li {
+          display: inline-block;
+          margin: 0 3px; 
+        }
     .slider .slick-dots button {
       font-size: 0;
       background: transparent;

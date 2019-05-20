@@ -4,8 +4,7 @@
 global $post;
 
 
-get_header(); 
-
+get_header();
 woocommerce_content();
 get_footer();
 
