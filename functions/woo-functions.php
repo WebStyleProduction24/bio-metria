@@ -99,8 +99,9 @@ function woo_custom_product_tabs( $tabs ) {
 function woo_video_tab_content() {
 	global $post;
 	$video_desc= get_post_meta( $post->ID, '_video_desc', true );
+	$shortcode_video_desc = do_shortcode($video_desc);
 	?>
-	<?php echo $video_desc; ?>
+	<?php echo $shortcode_video_desc; ?>
 	<?php
 }
 

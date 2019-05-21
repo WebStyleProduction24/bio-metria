@@ -6,7 +6,7 @@
 	<meta name ="viewport" content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="MobileOptimized" content="320">
-	<title><?php wp_title('«', true, 'right'); ?> <?php bloginfo('name'); ?></title>
+	<title><?php echo wp_get_document_title(); ?></title>
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<?php wp_head(); ?>
 </head>
