@@ -3,59 +3,58 @@ $(document).ready(function(){
 
 
 	$('.slider').slick({
-	  dots: true,
-		infinite: true,
-		arrows: false,
-	  speed: 300,
-		slidesToShow: 1,
-		slidesToScroll: 1, 
-	});
+    dots: true,
+    infinite: true,
+    arrows: false,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+  });
 
 
 	$(".equipment-slider").slick({
-        dots: false,
-        infinite: false,
-        arrows: true,
-        speed: 300, 
-        slidesToShow: 4,
-        slidesToScroll: 4
-    });
+    dots: false,
+    infinite: false,
+    arrows: true,
+    speed: 300, 
+    slidesToShow: 4,
+    slidesToScroll: 4
+  });
 
+  var $status = $('.product-images__info');
+  var $slickElement = $('.product-images'); 
 
-
-    var $status = $('.product-images__info');
-    var $slickElement = $('.product-images'); 
-
-    $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+  $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
       //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
       var i = (currentSlide ? currentSlide : 0) + 1;
       var count = (slick.slideCount < 10) ? "0" + slick.slideCount : slick.slideCount;
       $status.text(i + ' / ' + count); 
     });
 
-    $slickElement.slick({
-      autoplay: true,
-      dots: false, 
-      arrows: true
-    });
+  $slickElement.slick({
+    autoplay: true,
+    dots: false, 
+    arrows: true
+  });
 
-    $('.product-tab__item').on('click', function(){
-    	$('.product-tab__item').removeClass('product-tab__item-active');
-    	$(this).addClass('product-tab__item-active');
-    	$('.product-tab__content').hide();
-    	var id = $(this).data('id'); 
-    	$('.product-tab__content[data-id='+id+']').show();
-    });
- 
+  $('.product-tab__item').on('click', function(){
+   $('.product-tab__item').removeClass('product-tab__item-active');
+   $(this).addClass('product-tab__item-active');
+   $('.product-tab__content').hide();
+   var id = $(this).data('id'); 
+   $('.product-tab__content[data-id='+id+']').show();
+ });
 
-    if($(window).width() < 1050) {
-      $('.header-menu').addClass('drawer-nav');
-      setTimeout(function(){
-        $('.drawer').drawer();
-      }, 100)
-    } else {
-      $('.header-menu').removeClass('drawer-nav');
-    }
+
+  if($(window).width() < 1050) {
+    $('.header-menu').addClass('drawer-nav');
+    setTimeout(function(){
+      $('.drawer').drawer();
+    }, 100)
+  } else {
+    $('.header-menu').removeClass('drawer-nav');
+  }
 });
 
 
@@ -64,7 +63,7 @@ $( window ).resize(function() {
   if($(window).width() < 1050) {
     $('.drawer').drawer(); 
   } else {
-      $('.header-menu').removeClass('drawer-nav');
+    $('.header-menu').removeClass('drawer-nav');
   }
 
 });
@@ -73,10 +72,10 @@ $( window ).resize(function() {
 window.onscroll = function() {
   var scrolled = window.pageYOffset || document.documentElement.scrollTop;
   if($('.social_blue').size() > 0) {
-	  if($('.social_blue').offset().top > ($('.header').height() - 250)) {
-	  	$('.social_blue').removeClass('social_blue');
-	  } else {
-	  	$('.social_blue').addClass('social_blue');  
-	  }
-	}
+   if($('.social_blue').offset().top > ($('.header').height() - 250)) {
+    $('.social_blue').removeClass('social_blue');
+  } else {
+    $('.social_blue').addClass('social_blue');  
+  }
+}
 }
