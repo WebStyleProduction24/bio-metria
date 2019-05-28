@@ -38,3 +38,21 @@ add_action( 'woocommerce_process_product_meta', 'product_woo_custom_fields_save'
 
 
 add_action('woocommerce_single_product_summary', 'get_product_model', 16);
+
+
+
+
+
+
+
+//Меняем отображение продукта в категории товаров
+
+
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+
+add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_image', 10 );
+add_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title_bio', 10 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_excerpt', 1 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_description_product', 20 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'free_consultation', 30 );

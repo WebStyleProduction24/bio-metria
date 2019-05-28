@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post;
 
-$short_description = $post->post_excerpt;;
+$short_description = $post->post_excerpt;
 
 if ( ! $short_description ) {
 	return;
