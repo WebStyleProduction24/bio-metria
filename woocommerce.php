@@ -5,8 +5,12 @@ global $post;
 
 
 get_header();
-woocommerce_content();
+
+if ( is_singular( 'product' ) ) {
+	woocommerce_content();
+}else{
+	wc_get_template( 'archive-product.php' );
+}
+
 get_footer();
 
-
- ?>

@@ -12,17 +12,10 @@
 </head>
 <body class="drawer drawer--right" <?php body_class(); ?>>
 	<?php
-	if ( is_product() ) {
+	if ( is_product() || is_archive()) {
 
 		get_header('shop');
-	} else if ( is_archive() ) {?>
-		<div class="wrapper">
-			<div class="container">
-				<h1>Извините! Страница находится в режиме разработки</h1>
-			</div>
-		</div>
-		<?php 
-		get_header('shop');
+	} else if ( is_front_page() ) {
 	} else { ?>
 		<div class="wrapper">
 			<div class="container">

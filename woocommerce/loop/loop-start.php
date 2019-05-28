@@ -19,7 +19,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-
-<section class="main main_inner">
-	<div class="container">
-		<div class="category-list row">
+	<div class="category-list row">

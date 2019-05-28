@@ -6,9 +6,28 @@
  *
 */
 
+//Меню
+function category_list_menu() {
+	echo catalog_product_menu();
+}
 
+//Заголовок страницы
+function category_before_list() { ?>
+	<div class="category row">
+		<div class="title-line col-lg-12">
+			<h1 class="title"><?php woocommerce_page_title(); ?></h1>
+		</div>
+		<?php if ( is_product_taxonomy() && 0 === absint( get_query_var( 'paged' ) ) ) {
+			$term = get_queried_object();
 
+			if ( $term && ! empty( $term->description ) ) {
+				echo '<div class="category-desc col-lg-12">' . wc_format_content( $term->description ) . '</div>'; // WPCS: XSS ok.
+			}
+		} ?>
 
+	</div>
+
+<?php }
 //Изображения продукта
 
 
