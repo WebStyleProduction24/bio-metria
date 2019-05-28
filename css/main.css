@@ -4893,15 +4893,17 @@ body {
   margin-top: 93px;
 }
 .category-list__cat {
-  font: 300 14px 'Geometria';
+  font: 300 12px 'Geometria';
   text-transform: uppercase;
   margin-top: 26px;
   padding: 0;
+  min-height: 30px;
 }
 .category-list__name {
-  font: bold 24px 'Geometria';
+  font: bold 18px 'Geometria';
   text-transform: uppercase;
   padding-bottom: 10px;
+  min-height: 95px;
 }
 .category-list__name:after {
   content: '';

@@ -16,3 +16,7 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 .category-list__img {
 	min-height: 220px;
 }
+
+.category-list__mt {
+	margin-top: 56px;
+}

@@ -15,7 +15,15 @@
 	if ( is_product() ) {
 
 		get_header('shop');
-	} else if ( is_front_page() ) {} else { ?>
+	} else if ( is_archive() ) {?>
+		<div class="wrapper">
+			<div class="container">
+				<h1>Извините! Страница находится в режиме разработки</h1>
+			</div>
+		</div>
+		<?php 
+		get_header('shop');
+	} else { ?>
 		<div class="wrapper">
 			<div class="container">
 				<h1>Извините! Страница находится в разработке</h1>

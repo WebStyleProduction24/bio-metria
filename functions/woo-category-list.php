@@ -10,14 +10,21 @@
 
 
 //Изображения продукта
-function woocommerce_template_loop_product_image() {
+
+
+function woocommerce_template_loop_product_image( $size = 'woocommerce_thumbnail' ) {
 	remove_action( 'begin_fetch_post_thumbnail_html', '_wp_post_thumbnail_class_filter_add' );
 	global $product;
-	$id = $product->ID;
-	$size = array(247, 216);
-	$attr = array('class' => 'category-list__img');
-	$img = get_the_post_thumbnail($id, $size, $attr);
-	echo $img;
+	if (has_post_thumbnail()) {
+		$id = $product->ID;
+		$size = array(247, 216);
+		$attr = array('class' => 'category-list__img');
+		$img = get_the_post_thumbnail($id, $size, $attr);
+		echo $img;
+	} else {
+		$size = array(220, 220);
+		echo woocommerce_get_product_thumbnail($size);
+	}
 }
 
 //Заголовок продукта
@@ -34,7 +41,7 @@ function woocommerce_template_loop_product_title_bio() {
 		echo $print_text;
 		the_title( '<p class="category-list__name">', '</p>' );
 	} else {
-		the_title( '<p class="category-list__name">', '</p>' );
+		the_title( '<p class="category-list__name category-list__mt">', '</p>' );
 	}
 }
 
