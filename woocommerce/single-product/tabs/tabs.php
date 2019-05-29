@@ -44,11 +44,11 @@ if ( ! empty( $tabs ) ) : ?>
 		</ul>
 		<?php foreach ( $tabs as $key => $tab ) : ?>
 			<?php 
-			if (esc_attr( $key ) == 'description') {$data_id = '1';}
-			else if (esc_attr( $key ) == 'video') {$data_id = '2';}
-			else if (esc_attr( $key ) == 'programm') {$data_id = '3';}
+			if (esc_attr( $key ) == 'description') {$data_id = '1'; $style = 'style="display:block"';}
+			else if (esc_attr( $key ) == 'video') {$data_id = '2'; $style = 'style="display:none"';}
+			else if (esc_attr( $key ) == 'programm') {$data_id = '3'; $style = 'style="display:none"';}
 			?>
-			<div data-id="<?php echo $data_id; ?>" class="product-tab__content" >
+			<div data-id="<?php echo $data_id; ?>" class="product-tab__content" <?php echo $style; ?>>
 				<?php if ( isset( $tab['callback'] ) ) { call_user_func( $tab['callback'], $key, $tab ); } ?>
 			</div>
 		<?php endforeach; ?>
