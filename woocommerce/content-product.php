@@ -26,6 +26,11 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 ?>
 <div class="category__item col-lg-3">
 	<?php
+
+	if (is_product()) {
+		similar_products();
+	} else {
+
 	/**
 	 * Hook: woocommerce_before_shop_loop_item.
 	 *
@@ -68,5 +73,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_add_to_cart - 10
 	 */
 	// do_action( 'woocommerce_after_shop_loop_item' );
-	?>
+}
+?>
 </div>

@@ -28,39 +28,53 @@ function category_before_list() { ?>
 	</div>
 
 <?php }
+
 //Изображения продукта
-
-
 function woocommerce_template_loop_product_image( $size = 'woocommerce_thumbnail' ) {
+	if (is_product()) { 
+		$css = 'equipment-slider__'; 
+	}	else { 
+		$css = 'category-list__'; 
+	}
 	remove_action( 'begin_fetch_post_thumbnail_html', '_wp_post_thumbnail_class_filter_add' );
 	global $product;
 	if (has_post_thumbnail()) {
 		$id = $product->ID;
 		$size = array(247, 216);
-		$attr = array('class' => 'category-list__img');
+		$attr = array('class' => $css . 'img');
 		$img = get_the_post_thumbnail($id, $size, $attr);
 		echo $img;
 	} else {
 		$size = array(220, 220);
 		echo woocommerce_get_product_thumbnail($size);
 	}
+	
 }
 
 //Заголовок продукта
 function woocommerce_template_loop_product_title_bio() {
+	if (is_product()) {
+		$css = 'equipment-slider__';
+		$css_product_name = 'equipment-slider__type';
+		$tag = 'span';
+	}	else {
+		$css = 'category-list__';
+		$css_product_name = 'category-list__cat';
+		$tag = 'p';
+	}
 	global $post;
 	$product_custom = get_post_meta( $post->ID, '_product_custom_woo', true );
 	$model_custom = get_post_meta( $post->ID, '_model_custom_woo', true );
 	if ( $product_custom && $model_custom) {
-		$print_text = '<p class="category-list__cat">' . $product_custom . '</p>';
-		$print_text .= '<p class="category-list__name">' . $model_custom . '</p>';
+		$print_text = '<' . $tag . ' class="' . $css_product_name . '">' . $product_custom . '</' . $tag . '>';
+		$print_text .= '<' . $tag . ' class="' . $css . 'name">' . $model_custom . '</' . $tag .'>';
 		echo $print_text;
 	} else if ($product_custom) {
-		$print_text = '<p class="category-list__name">' . $product_custom . '</p>';
+		$print_text = '<' . $tag . ' class="' . $css . 'name">' . $product_custom . '</' . $tag . '>';
 		echo $print_text;
-		the_title( '<p class="category-list__name">', '</p>' );
+		the_title( '<' . $tag . ' class="' . $css . 'name">', '</' . $tag . '>' );
 	} else {
-		the_title( '<p class="category-list__name category-list__mt">', '</p>' );
+		the_title( '<' . $tag . ' class="' . $css . 'name">', '</' . $tag . '>' );
 	}
 }
 

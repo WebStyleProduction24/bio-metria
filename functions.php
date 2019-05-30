@@ -4,6 +4,7 @@ wc_get_template( '/functions/menu.php' );
 wc_get_template( '/functions/hooks.php' );
 wc_get_template( '/functions/woo-functions.php' );
 wc_get_template( '/functions/woo-category-list.php' );
+wc_get_template( '/functions/woo-product.php' );
 wc_get_template( '/functions/post-type.php' );
 
 

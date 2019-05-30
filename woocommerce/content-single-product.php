@@ -39,8 +39,8 @@ if ( post_password_required() ) {
 		<?php echo catalog_product_menu(); ?>
 		<div class="product row">
 
-				<div class="product-desc col-lg-3">
-					<?php
+			<div class="product-desc col-lg-3">
+				<?php
 					/**
 					 * Hook: woocommerce_single_product_summary.
 					 *
@@ -56,9 +56,9 @@ if ( post_password_required() ) {
 					?>
 				</div>
 				
-       	<div class="product-view col-lg-9">
+				<div class="product-view col-lg-9">
 
-				<?php
+					<?php
 				/**
 				 * Hook: woocommerce_before_single_product_summary.
 				 *
@@ -68,21 +68,33 @@ if ( post_password_required() ) {
 				 */
 				do_action( 'woocommerce_before_single_product_summary' );
 				?>
-
 			</div>
+			<div class="product-info col-lg-12">
 
-
-			<?php
+				<?php
 			/**
 			 * Hook: woocommerce_after_single_product_summary.
 			 *
 			 * @hooked woocommerce_output_product_data_tabs - 10
 			 * @hooked woocommerce_upsell_display - 15
-			 * @hooked woocommerce_output_related_products - 20
+			 * @hooked deleted woocommerce_output_related_products - 20
 			 */
 			do_action( 'woocommerce_after_single_product_summary' );
 			?>
 			<a class="btn btn_back" onClick="history.back()">Назад в каталог</a>
+		</div>
+		<div class="col-lg-12"> 
+			<span class="title title-equipment">Похожее оборудование</span>
+
+				<?php
+			/**
+			 * Hook: woocommerce_related_products.
+			 *
+			 * @hooked woocommerce_output_related_products - 10
+			 */
+			do_action( 'woocommerce_related_products_bio' );
+			?>
+
 		</div>
 	</div>
 </section>

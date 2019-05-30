@@ -4605,40 +4605,56 @@ body {
       font-size: 12px;
       color: #fff;
       padding: 13px 0 0;
-      line-height: 1.3; }
+      line-height: 1.3;
+    }
     .equipment-list__link {
       color: #fff;
       font-size: 18px;
       display: table;
-      margin: 8px 6px 0 auto; }
+      margin: 8px 6px 0 auto;
+    }
     @media (max-width: 991px) {
       .equipment-list_second .equipment-list__item:first-child {
-        margin-left: 5%; }
+        margin-left: 5%; 
+      }
       .equipment-list_second .equipment-list__item:last-child {
-        margin-right: 5%; } }
+        margin-right: 5%;
+      } 
+    }
     @media (max-width: 767px) {
       .equipment-list_second .equipment-list__item:first-child {
-        margin: 0 auto; }
+        margin: 0 auto;
+      }
       .equipment-list_second .equipment-list__item:last-child {
-        margin: 0 auto; } }
-  .equipment-slider {
-    margin-top: 70px; }
+        margin: 0 auto;
+      }
+    }
+    .equipment-slider {
+      margin-top: 70px;
+    }
     .equipment-slider__item {
-      text-align: center; }
+      text-align: center; 
+    }
     .equipment-slider__img {
       display: table;
-      margin: 0 auto; }
+      margin: 0 auto;
+      height: 165px;
+      width: auto;
+    }
     .equipment-slider__type {
       display: block;
       text-transform: uppercase;
-      margin: 28px 0 6px; }
+      margin: 28px 0 6px; 
+    }
     .equipment-slider__name {
       display: block;
       text-transform: uppercase;
       font-size: 18px;
-      font-weight: 600; }
+      font-weight: 600;
+    }
     .equipment-slider .slick-list {
-      margin: 0 15px; }
+      margin: 0 15px;
+    }
     .equipment-slider .slick-arrow {
       background: url(../img/arrow-slider.png);
       padding: 0;
@@ -4646,20 +4662,24 @@ body {
       width: 14px;
       height: 28px;
       position: absolute;
-      top: calc(50% - 14px); }
-      .equipment-slider .slick-arrow:hover {
-        opacity: .8; }
+      top: calc(50% - 14px);
+    }
+    .equipment-slider .slick-arrow:hover {
+      opacity: .8; 
+    }
     .equipment-slider .slick-next {
       right: 0;
       -webkit-transform: rotate(180deg);
-          -ms-transform: rotate(180deg);
-              transform: rotate(180deg); }
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg); 
+    }
     .equipment-slider .slick-prev {
-      left: 0; }
-
-.about__text {
-  margin-top: 26px;
-  line-height: 17px; }
+      left: 0; 
+    }
+    .about__text {
+      margin-top: 26px;
+      line-height: 17px; 
+    }
 
 .about__img {
   margin-top: 23px;
