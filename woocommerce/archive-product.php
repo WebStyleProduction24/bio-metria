@@ -55,7 +55,7 @@ get_header( 'shop' );
 				'taxonomy' => 'product_cat',
 				'depth' => 1,
 				'exclude' => '15',
-				'title_li' => 'Категории:'
+				'title_li' => 'Категории нашей продукции:'
 			) );
 			?> </ul> <?php		
 
@@ -67,7 +67,7 @@ get_header( 'shop' );
 			wp_list_categories( $args = array(
 				'taxonomy' => 'product_cat',
 				'child_of' => get_queried_object()->term_id,
-				'title_li' => 'Подкатегории:'
+				'title_li' => 'Подкатегории нашей продукции:'
 			) );
 
 			?> </ul> <?php
