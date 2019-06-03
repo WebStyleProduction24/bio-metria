@@ -60,46 +60,30 @@ get_header( 'shop' );
 			?> </ul> <?php		
 
 		} else if (is_product_taxonomy()) {
+			$id = get_queried_object()->term_id;
 
-			category_after_list();
+			if (empty(get_term_children($id, 'product_cat'))) {
 
-			?> <ul> <?php	
-			wp_list_categories( $args = array(
-				'taxonomy' => 'product_cat',
-				'child_of' => get_queried_object()->term_id,
-				'title_li' => 'Подкатегории нашей продукции:'
-			) );
+				content_product();
 
-			?> </ul> <?php
+			} else {
+
+				category_after_list();
+
+				?> <ul> <?php	
+				wp_list_categories( $args = array(
+					'taxonomy' => 'product_cat',
+					'child_of' => $id,
+					'title_li' => 'Подкатегории нашей продукции:'
+				) );
+
+				?> </ul> <?php
+			}
 
 		} else {
 
-			woocommerce_product_loop_start();
-
-			if ( wc_get_loop_prop( 'total' ) ) {
-				while ( have_posts() ) {
-					the_post();
-
-					/**
-					* Hook: woocommerce_shop_loop.
-					*
-					* @hooked WC_Structured_Data::generate_product_data() - 10
-					*/
-					do_action( 'woocommerce_shop_loop' );
-
-					wc_get_template_part( 'content', 'product' );
-				}
-
-			}
-
-			// woocommerce_product_loop_end();
-
-			/**
-			* Hook: woocommerce_after_shop_loop.
-			*
-			* @hooked woocommerce_pagination - 10
-			*/
-			do_action( 'woocommerce_after_shop_loop' );
+			content_product();
+			
 		}
 	} else {
 	/**

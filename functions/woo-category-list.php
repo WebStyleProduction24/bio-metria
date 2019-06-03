@@ -105,3 +105,35 @@ function woocommerce_description_product() {
 function free_consultation() {
 	button_consultation();
 }
+
+//Цикл вывода продуктов из archive-product.php
+function content_product() {
+
+	woocommerce_product_loop_start();
+
+	if ( wc_get_loop_prop( 'total' ) ) {
+		while ( have_posts() ) {
+			the_post();
+
+					/**
+					* Hook: woocommerce_shop_loop.
+					*
+					* @hooked WC_Structured_Data::generate_product_data() - 10
+					*/
+					do_action( 'woocommerce_shop_loop' );
+
+					wc_get_template_part( 'content', 'product' );
+				}
+
+			}
+
+			// woocommerce_product_loop_end();
+
+			/**
+			* Hook: woocommerce_after_shop_loop.
+			*
+			* @hooked woocommerce_pagination - 10
+			*/
+			do_action( 'woocommerce_after_shop_loop' );
+			category_after_list();
+		}
