@@ -50,3 +50,6 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 3
 
 add_action( 'woocommerce_before_shop_loop', 'category_list_menu', 40 );
 add_action( 'woocommerce_before_shop_loop', 'category_before_list', 50 );
+
+//Контент после списка продуктов
+add_action('woocommerce_after_main_content', 'category_after_list', 20);

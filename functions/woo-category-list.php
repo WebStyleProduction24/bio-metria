@@ -17,6 +17,15 @@ function category_before_list() { ?>
 		<div class="title-line col-lg-12">
 			<h1 class="title"><?php woocommerce_page_title(); ?></h1>
 		</div>
+	</div>
+
+<?php }
+
+
+//Описание категории
+
+function category_after_list() { ?>
+	<div class="category-description row">
 		<?php if ( is_product_taxonomy() && 0 === absint( get_query_var( 'paged' ) ) ) {
 			$term = get_queried_object();
 
@@ -92,9 +101,7 @@ function woocommerce_description_product() {
 	echo '<a href="' . get_permalink() . '" class="btn category-list__btn">Описание товара</a>';
 }
 
-//Кнопа бесплатная консультация
-
-
+//Кнопrа бесплатная консультация
 function free_consultation() {
 	button_consultation();
 }
