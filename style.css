@@ -25,3 +25,21 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 .category-description .category-desc {
 	margin-top: 0;
 }
+.cat a  { 
+	color: #292929;
+}
+.cat.category__item {
+	text-align: center;
+	margin-bottom: 0;
+}
+.cat.category__item a img {
+	width: 75%;
+}
+.cat .category-list__name {
+	font-size: 14px;
+	min-height: 30px;
+}
+
+.cat .category-list__name:after {
+	display: none;
+}

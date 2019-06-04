@@ -137,3 +137,76 @@ function content_product() {
 			do_action( 'woocommerce_after_shop_loop' );
 			category_after_list();
 		}
+
+
+
+//вывод плитки категорий
+
+class WC_Product_Cat_List_Walker_Bio extends Walker {
+
+	/**
+	 * DB fields to use.
+	 *
+	 * @var array
+	 */
+	public $db_fields = array(
+		'parent' => 'parent',
+		'id'     => 'term_id',
+		'slug'   => 'slug',
+	);
+
+	/**
+	 * Start the element output.
+	 *
+	 * @see Walker::start_el()
+	 * @since 2.1.0
+	 *
+	 * @param string  $output            Passed by reference. Used to append additional content.
+	 * @param object  $cat               Category.
+	 * @param int     $depth             Depth of category in reference to parents.
+	 * @param array   $args              Arguments.
+	 * @param integer $current_object_id Current object ID.
+	 */
+	public function start_el( &$output, $cat, $depth = 0, $args = array(), $current_object_id = 0 ) {
+		$cat_id = intval( $cat->term_id );
+
+		$thumb_ID = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+		if (empty($thumb_ID)) { 
+
+			$image_url .= wc_placeholder_img_src();
+
+		} else {
+
+			$image_url = wp_get_attachment_image_url( $thumb_ID );
+
+		}
+
+		$output .= '<div class="category__item col-lg-3 cat">';
+
+		$output .= '<a href="' . get_term_link( $cat_id, $this->tree_type ) . '">';
+
+		$output .= '<img alt="" src="'.$image_url.'" />';
+
+		$output .= '<p class="category-list__name">';
+
+		$output .= apply_filters( 'list_product_cats', $cat->name, $cat );
+
+		$output .= '</p></a>';
+}
+
+	/**
+	 * Ends the element output, if needed.
+	 *
+	 * @see Walker::end_el()
+	 * @since 2.1.0
+	 *
+	 * @param string $output Passed by reference. Used to append additional content.
+	 * @param object $cat    Category.
+	 * @param int    $depth  Depth of category. Not used.
+	 * @param array  $args   Only uses 'list' for whether should append to output.
+	 */
+	public function end_el( &$output, $cat, $depth = 0, $args = array() ) {
+		$output .= "</div>\n";
+	}
+
+}

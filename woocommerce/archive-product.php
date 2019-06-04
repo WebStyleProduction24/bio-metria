@@ -33,6 +33,10 @@ get_header( 'shop' );
 <section class="main main_inner">
 	<div class="container">
 		<?php
+
+		$category_list_st = '<div class="category-list row">';
+		$category_list_en = '</div>';
+
 		if ( woocommerce_product_loop() ) {
 
 		/**
@@ -47,17 +51,20 @@ get_header( 'shop' );
 		do_action( 'woocommerce_before_shop_loop' );
 
 		if ( is_shop()){
+			
+			echo $category_list_st;
 
-			do_action( 'woocommerce_archive_description' );
-
-			?> <ul> <?php 
 			wp_list_categories( $args = array(
 				'taxonomy' => 'product_cat',
 				'depth' => 1,
 				'exclude' => '15',
-				'title_li' => 'Категории нашей продукции:'
+				'title_li' => false,
+				'walker' => new WC_Product_Cat_List_Walker_Bio(),
 			) );
-			?> </ul> <?php		
+
+			echo $category_list_en;
+
+			do_action( 'woocommerce_archive_description' );
 
 		} else if (is_product_taxonomy()) {
 			$id = get_queried_object()->term_id;
@@ -68,16 +75,17 @@ get_header( 'shop' );
 
 			} else {
 
-				category_after_list();
-
-				?> <ul> <?php	
+				echo $category_list_st;
 				wp_list_categories( $args = array(
 					'taxonomy' => 'product_cat',
 					'child_of' => $id,
-					'title_li' => 'Подкатегории нашей продукции:'
+					'title_li' => false,
+					'walker'	=> new WC_Product_Cat_List_Walker_Bio(),
 				) );
 
-				?> </ul> <?php
+				echo $category_list_en;
+
+				category_after_list();
 			}
 
 		} else {
