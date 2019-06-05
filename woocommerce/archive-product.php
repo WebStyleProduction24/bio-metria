@@ -34,6 +34,8 @@ get_header( 'shop' );
 	<div class="container">
 		<?php
 
+		get_posts( array('post_type' => 'product_cat'));
+
 		$category_list_st = '<div class="category-list row">';
 		$category_list_en = '</div>';
 
@@ -50,7 +52,8 @@ get_header( 'shop' );
 		 */
 		do_action( 'woocommerce_before_shop_loop' );
 
-		if ( is_shop()){
+		if ( is_shop()) // Если мы на странице магазина, то выводим список категорий продуктов
+		{
 			
 			echo $category_list_st;
 
@@ -66,12 +69,13 @@ get_header( 'shop' );
 
 			do_action( 'woocommerce_archive_description' );
 
-		} else if (is_product_taxonomy()) {
+		} else if (is_product_taxonomy()) //Если мы на странице категории, то выводим подкатегории
+		{
 			$id = get_queried_object()->term_id;
 
 			if (empty(get_term_children($id, 'product_cat'))) {
 
-				content_product();
+				content_product(); //Выводим список продуктов, если нет дочерних категорий
 
 			} else {
 
@@ -82,13 +86,23 @@ get_header( 'shop' );
 					'title_li' => false,
 					'walker'	=> new WC_Product_Cat_List_Walker_Bio(),
 				) );
-
 				echo $category_list_en;
+
+				global $product;
+				$terms = get_the_terms( $product->item_id, 'product_cat' );
+				$term = array_shift( $terms );
+				$parent = $term->parent;
+
+				if (empty($parent)) {
+					content_product_parent_none();
+				}
+
 
 				category_after_list();
 			}
 
-		} else {
+		} else //В остальных случаях выводим цикл построения списка продуктов
+		{
 
 			content_product();
 			
