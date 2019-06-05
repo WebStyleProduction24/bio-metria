@@ -134,24 +134,19 @@ function content_product_parent_none() {
 
 			the_post();
 			do_action( 'woocommerce_shop_loop' );
+
 			global $product;
 			$terms = get_the_terms( $product->item_id, 'product_cat' );
 			$term = array_shift( $terms );
 			$parent = $term->parent;
+
 			if (empty($parent)) {
 				wc_get_template_part( 'content', 'product' );
 			}
 		}
 	}
 
-	do_action( 'woocommerce_after_shop_loop' );
-	category_after_list();
 }
-
-
-
-
-
 
 
 
