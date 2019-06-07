@@ -13,10 +13,12 @@
 </head>
 <body class="drawer drawer--right" <?php body_class(); ?>>
 	<?php
-	if ( is_product() || is_archive()) {
-
+	if ( is_product() || is_archive() || is_page()) {
+		if ( is_front_page() ) {
+			get_header('main');
+		} else {
 		get_header('shop');
-	} else if ( is_front_page() ) {
+	}  
 	} else { ?>
 		<div class="wrapper">
 			<div class="container">
