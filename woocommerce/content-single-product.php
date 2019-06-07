@@ -99,6 +99,4 @@ if ( post_password_required() ) {
 	</div>
 </section>
 
-<?php get_footer('shop'); ?>
-
 <?php do_action( 'woocommerce_after_single_product' ); ?>
