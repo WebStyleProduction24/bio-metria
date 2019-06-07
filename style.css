@@ -73,3 +73,18 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 	float: left;
 	margin-right: 23px;
 }
+
+@media (max-width: 525px) {
+	.img_post_thumbnail {
+		display: none;
+	}
+	.post .product-desc__title:before {
+		display: none;	
+	}
+	.post {
+		margin-top: 15px;
+	}
+	.post .wp-block-image .alignright {
+		margin-left: 0;
+	}
+}
