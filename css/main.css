@@ -5533,7 +5533,9 @@ body {
 }
 .equipment-list__normal {
   text-align: center;
-  padding: 53px 15px 14px;
+  vertical-align: middle;
+  display: table-cell;
+  /*padding: 53px 15px 14px;*/
 }
 .equipment-list__normal:before {
   content: "";
@@ -5559,14 +5561,16 @@ body {
 }
 .equipment-list__item {
   position: relative;
-  height: 215px;
+  height: 315px;
   -webkit-transition: all .5s;
   transition: all .5s;
+  display: inline-table;
 }
 @media (max-width: 767px) {
   .equipment-list__item {
     width: 80%;
     margin: 0 auto;
+    height: 245px;
   }
 }
 .equipment-list__item:before {
@@ -5606,13 +5610,14 @@ body {
   display: none;
 }
 .equipment-list__img {
-  max-width: 67px;
+  max-width: 40%;
   display: table;
   margin: 0 auto 22px;
   stroke: #2a6aaa;
 }
 .equipment-list__name {
   font-weight: 400;
+  font-size: 16px;
 }
 .equipment-list__title {
   color: #fff;
