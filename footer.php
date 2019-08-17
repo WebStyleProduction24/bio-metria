@@ -23,7 +23,7 @@
      <li class="footer-list__item"><a href="#" class="footer-list__link">Kaiser Fototechnik</a></li>
      <li class="footer-list__item"><a href="#" class="footer-list__link">Сканеры документов</a></li>
      <li class="footer-list__item"><a href="#" class="footer-list__link">Криминалистическое оборудование</a></li>
-     <li class="footer-list__item"><a href="#" class="footer-list__link">Наш блог</a></li>
+     <li class="footer-list__item"><a href="/nash-blog" class="footer-list__link">Наш блог</a></li>
      <li class="footer-list__item"><a href="#" class="footer-list__link">FAQ</a></li>
    </ul>
  </div>
