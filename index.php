@@ -4,7 +4,7 @@
 
 	<div class="container">
 
-		<h1 class="product-desc__title"><?php echo get_the_title(get_queried_object_id()); ?></h1>
+		<h1 class="product-desc__title title-our-blog"><?php echo get_the_title(get_queried_object_id()); ?></h1>
 		
 		<?php 
 
@@ -16,13 +16,19 @@
 
 			<div class="col-10 blog">
 				<div class="row">
-				<div class="col-4"><img src="<?php echo get_the_post_thumbnail_url(); ?>" alt=""></div>
-				<div class="col-8">
-					<p class="category-list__name"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-					<?php the_content(); ?>
-					<a href="<?php the_permalink(); ?>" class="btn btn_back articles__link">Читать статью</a>
+					<div class="col-4"><a href="<?php the_permalink(); ?>"><img src="<?php echo get_the_post_thumbnail_url(); ?>" alt=""></a></div>
+					<div class="col-8">
+						<div class="row align-items-end h-100">
+							<p class="category-list__name"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+							<?php the_excerpt(); ?>
+							<div class="row justify-content-end w-100">
+								<div class="col-4">
+									<a href="<?php the_permalink(); ?>" class="articles__link">Читать статью</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
 				
 			</div>
 

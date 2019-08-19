@@ -13,17 +13,8 @@
 </head>
 <body class="drawer drawer--right" <?php body_class(); ?>>
 	<?php
-	if ( is_product() || is_archive() || is_page()) {
-		if ( is_front_page() ) {
-			get_header('main');
-		} else {
+	if ( is_front_page() ) {
+		get_header('main');
+	} else {
 		get_header('shop');
-	}  
-	} else { ?>
-		<div class="wrapper">
-			<div class="container">
-				<h1>Извините! Страница находится в разработке</h1>
-				<h3><a href="/catalog">Перейти в каталог продукции</a></h3>
-			</div>
-		</div>
-		<?php } ?>
+	} 
