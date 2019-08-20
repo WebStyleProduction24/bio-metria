@@ -9,23 +9,11 @@
     ул. Буракова, д. 27</span>
   </div>
   <div class="footer-center">
-    <ul class="footer-list">
-     <li class="footer-list__item"><a href="#" class="footer-list__link">О компании</a></li>
-     <li class="footer-list__item"><a href="#" class="footer-list__link">Биометрическая подпись документов</a></li>
-     <li class="footer-list__item"><a href="#" class="footer-list__link">Система регистрации посетителей</a></li>
-     <li class="footer-list__item"><a href="#" class="footer-list__link">Контроль и управление доступом</a></li>
-     <li class="footer-list__item"><a href="#" class="footer-list__link">Учёт рабочего времени сотрудников</a></li>
-     <li class="footer-list__item"><a href="#" class="footer-list__link">Удалённый доступ к системам web-клиент</a></li>
-     <li class="footer-list__item"><a href="#" class="footer-list__link">Планшеты биометрической подписи</a></li>
-   </ul>
-   <ul class="footer-list">
-     <li class="footer-list__item"><a href="#" class="footer-list__link">Читатели RFID, ладони, отпечатка, лица</a></li>
-     <li class="footer-list__item"><a href="#" class="footer-list__link">Kaiser Fototechnik</a></li>
-     <li class="footer-list__item"><a href="#" class="footer-list__link">Сканеры документов</a></li>
-     <li class="footer-list__item"><a href="#" class="footer-list__link">Криминалистическое оборудование</a></li>
-     <li class="footer-list__item"><a href="/nash-blog" class="footer-list__link">Наш блог</a></li>
-     <li class="footer-list__item"><a href="#" class="footer-list__link">FAQ</a></li>
-   </ul>
+
+    <?php echo footer_menu_1(); ?>
+    
+    <?php echo footer_menu_2(); ?>
+
  </div>
  <div class="footer-right">
   <a class="footer__phone" href="call:+74952054700">+7 (495) 205-47-00</a>
