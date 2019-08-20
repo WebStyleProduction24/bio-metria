@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
-<section class="main main_inner">
+<section class="main main_inner mt-5">
 
 	<div class="container">
 
-		<h1 class="product-desc__title title-our-blog"><?php echo get_the_title(get_queried_object_id()); ?></h1>
+		<h1 class="product-desc__title title-our-blog mb-4"><?php echo get_the_title(get_queried_object_id()); ?></h1>
 		
 		<?php 
 

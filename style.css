@@ -12,15 +12,32 @@ License URI: LICENSE
 
 GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 /*================================================================*/
+.title-our-blog.product-desc__title.single:after {
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0px;
+}
 .title-our-blog.product-desc__title:after {
 	display: none;
 }
-.title-our-blog.product-desc__title {
-	border-bottom: 0;
-	border-left: 5px solid #1863ac;
-	padding-left: 25px;
-	line-height: 1;
-	margin: 50px 0;
+.title-our-blog.product-desc__title.single{
+	overflow: hidden;
+	padding-bottom: 2rem;
+}
+.title-our-blog.product-desc__title {	
+    padding-left: 25px;
+    position: relative;
+}
+.title-our-blog.product-desc__title:before {
+	content: '';
+	width: 5px;
+	margin-top: 5px;
+	height: 25px;
+	background: #1863ac;
+	display: block;
+	position: absolute;
+	left: 0;
 }
 .blog .articles__link {
 	width: initial;
