@@ -26,8 +26,8 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 	padding-bottom: 2rem;
 }
 .title-our-blog.product-desc__title {	
-    padding-left: 25px;
-    position: relative;
+	padding-left: 25px;
+	position: relative;
 }
 .title-our-blog.product-desc__title:before {
 	content: '';
@@ -45,9 +45,6 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 	background-position: right;
 	background-size: 40%;
 }
-.blog:nth-child(2n-1) {
-	margin-left: 16.66667%
-}
 .blog:last-child {
 	margin-bottom: 0 !important;
 }
@@ -59,7 +56,6 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 }
 .blog .category-list__name {
 	min-height: initial;
-	margin-top: 55px;
 }
 .blog .category-list__name a{
 	color: #292929;
@@ -131,7 +127,19 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 	margin-right: 23px;
 }
 
+@media (min-width: 992px) {
+	.blog .category-list__name {
+		margin-top: 55px;
+	}
+	.blog:nth-child(2n-1) {
+		margin-left: 16.66667%
+	}
+}
+
 @media (max-width: 525px) {
+	img.single {
+		width: 100%;
+	}
 	.img_post_thumbnail {
 		display: none;
 	}
