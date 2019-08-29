@@ -48,7 +48,7 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_output_all_notices',
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 
-add_action( 'woocommerce_before_shop_loop', 'category_list_menu', 40 );
+// add_action( 'woocommerce_before_shop_loop', 'category_list_menu', 40 );
 add_action( 'woocommerce_before_shop_loop', 'category_before_list', 50 );
 
 //Контент после списка продуктов

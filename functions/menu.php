@@ -14,7 +14,7 @@ function catalog_product_menu()
 {
 	wp_nav_menu( [
 		'theme_location'  => 'catalog_product',
-		'container_class' => 'menu row',
+		'container'				=> false,
 		'menu_class'      => 'menu__list col-lg-12',
 		'walker'          => new wp_catalog_product_menu,
 	] );

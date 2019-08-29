@@ -36,7 +36,7 @@ if ( post_password_required() ) {
 <section class="main main_inner">
 
 	<div class="container">
-		<?php echo catalog_product_menu(); ?>
+		<div class="d-none d-sm-block"><?php echo catalog_product_menu(); ?></div>
 		<div class="product row">
 
 			<div class="product-desc col-lg-3">

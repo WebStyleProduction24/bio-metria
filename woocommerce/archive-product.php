@@ -32,6 +32,9 @@ get_header( 'shop' );
 
 <section class="main main_inner">
 	<div class="container">
+
+		<div class="d-none d-sm-block"><?php echo category_list_menu(); ?></div>
+
 		<?php
 
 		get_posts( array('post_type' => 'product_cat'));
