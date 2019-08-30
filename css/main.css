@@ -4870,7 +4870,7 @@ body {
   } 
 }
 .header-right {
-  float: right;
+  /*float: right;*/
   text-align: right;
   margin-right: 6%;
 }
@@ -5092,10 +5092,11 @@ body {
 .social__link {
   color: #6c98c4;
   display: block;
-  font-size: 18px;
-  margin: 5px 0;
+  font-size: 24px;
+  margin: 5px 10px;
   -webkit-transition: all .5s;
   transition: all .5s;
+  float: left;
 }
 .social:before, .social:after {
   content: "";

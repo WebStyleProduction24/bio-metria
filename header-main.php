@@ -1,16 +1,18 @@
 
 <main role="main">
-  <?php echo socials_float(); ?>
   <!-- HEADER -->
   <header class="header">
     <div class="container-fluid header-top">
       <a class="header-logo">
         <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" class="header-logo__img" alt="">
       </a>
-      <div class="header-right">
-        <div class="header-phone">
+      <div class="header-right row justify-content-end">
+        <div class="header-phone col-md-5 col-lg-2">
+          <?php echo socials_float(); ?>          
+        </div>
+        <div class="header-phone col-md-5 col-lg-2 pr-0">
           <a class="header-phone__link" href="tel:74952054700">+7 (495) 205-47-00</a>
-          <a class="header-phone__link" href="tel:79260040137">+7 (926) 004-01-37</a>
+          <a class="header-phone__link" href="mailto:info@bio-metria.ru">info@bio-metria.ru</a>
         </div>
         <button type="button" class="drawer-toggle drawer-hamburger">
           <span class="drawer-hamburger-icon"></span>

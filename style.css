@@ -136,6 +136,14 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 	float: left;
 	margin-right: 23px;
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .header-menu .header-menu__link {
+    font-size: 13px !important;
+  }
+  .header-menu .header-menu__item {
+    margin-left: 10px !important;
+  }
+}
 
 @media (min-width: 992px) {
 	.blog .category-list__name {
@@ -143,6 +151,12 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 	}
 	.blog:nth-child(2n-1) {
 		margin-left: 16.66667%
+	}
+}
+
+@media (max-width: 929px) {
+	.header-right .header-menu__item {
+		display: block;
 	}
 }
 
@@ -156,9 +170,6 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 	.drawer--right .drawer-nav + div li {
 		border: none !important;
 		padding-left: 0;
-	}
-	.header-right .header-menu__item {
-		display: block;
 	}
 }
 

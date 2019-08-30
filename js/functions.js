@@ -47,7 +47,7 @@ $(document).ready(function(){
  });
 
 
-  if($(window).width() < 1050) {
+  if($(window).width() < 992) {
     $('.header-menu').addClass('drawer-nav');
     setTimeout(function(){
       $('.drawer').drawer();
@@ -60,7 +60,7 @@ $(document).ready(function(){
 
 $( window ).resize(function() {
 
-  if($(window).width() < 1050) {
+  if($(window).width() < 992) {
     $('.drawer').drawer(); 
   } else {
     $('.header-menu').removeClass('drawer-nav');

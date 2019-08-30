@@ -1,5 +1,3 @@
- <?php echo socials_float(); ?>
-
  <!-- HEADER --> 
  <header class="header header_inner">
    <div class="container-fluid header-top">
@@ -9,24 +7,28 @@
 
    <?php echo woocommerce_breadcrumb(); ?>
 
-   <div class="header-right">
-     <div class="header-phone">
+   <div class="header-right row justify-content-end">
+    <div class="header-phone col-md-5 col-lg-4 col-xl-2">
+      <?php echo socials_float(); ?>          
+    </div>
+    <div class="header-phone col-md-5 col-lg-3 col-xl-2 pr-0">
       <a class="header-phone__link" href="tel:74952054700">+7 (495) 205-47-00</a>
-      <a class="header-phone__link" href="tel:79260040137">+7 (926) 004-01-37</a>
+      <a class="header-phone__link" href="mailto:info@bio-metria.ru">info@bio-metria.ru</a>
     </div>
     <button type="button" class="drawer-toggle drawer-hamburger">
       <span class="drawer-hamburger-icon"></span>
     </button>
-    <div class="drawer-nav">
+    <div class="d-none d-md-block"><?php echo main_menu(); ?></div>
+    <div class="drawer-nav d-block d-lg-none">
      <?php echo main_menu(); ?>
      <div class="d-block d-sm-none">
       <h3>Категории продуктов:</h3>
       <?php echo category_list_menu(); ?>
-        
-      </div>
-   </div>
 
- </div>
+    </div>
+  </div>
+
+</div>
 </div>
 </header>
 
