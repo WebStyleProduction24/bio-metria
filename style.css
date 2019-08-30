@@ -12,6 +12,7 @@ License URI: LICENSE
 
 GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 /*================================================================*/
+/*================================================================*/
 .drawer-nav h3 {
 	padding: 20px 15px 0;
 }
@@ -137,12 +138,12 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 	margin-right: 23px;
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  .header-menu .header-menu__link {
-    font-size: 13px !important;
-  }
-  .header-menu .header-menu__item {
-    margin-left: 10px !important;
-  }
+	.header-menu .header-menu__link {
+		font-size: 13px !important;
+	}
+	.header-menu .header-menu__item {
+		margin-left: 10px !important;
+	}
 }
 
 @media (min-width: 992px) {
@@ -161,6 +162,15 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 }
 
 @media (max-width: 575px) {
+	.overflow-hidden {
+		overflow: hidden!important;
+	}
+	.float-left {
+		float: left;
+	}
+	.social__link {
+		font-size: 20px !important;
+	}
 	.drawer--right .drawer-nav + div ul::after {
 		border: none !important;
 	}

@@ -3,22 +3,22 @@
   <!-- HEADER -->
   <header class="header">
     <div class="container-fluid header-top">
-      <a class="header-logo">
+      <a href="/" class="header-logo">
         <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" class="header-logo__img" alt="">
       </a>
       <div class="header-right row justify-content-end">
-        <div class="header-phone col-md-5 col-lg-2">
-          <?php echo socials_float(); ?>          
-        </div>
-        <div class="header-phone col-md-5 col-lg-2 pr-0">
-          <a class="header-phone__link" href="tel:74952054700">+7 (495) 205-47-00</a>
-          <a class="header-phone__link" href="mailto:info@bio-metria.ru">info@bio-metria.ru</a>
-        </div>
-        <button type="button" class="drawer-toggle drawer-hamburger">
-          <span class="drawer-hamburger-icon"></span>
-        </button>
-        <?php echo main_menu(); ?>
+       <div class="header-phone col-6 col-md-5 col-lg-4 col-xl-2 overflow-hidden float-left">
+        <?php echo socials_float(); ?>          
       </div>
+      <div class="header-phone col-6 col-md-5 col-lg-3 col-xl-2 pr-0 overflow-hidden">
+        <a class="header-phone__link" href="tel:74952054700">+7 (495) 205-47-00</a>
+        <a class="header-phone__link" href="mailto:info@bio-metria.ru">info@bio-metria.ru</a>
+      </div>
+      <button type="button" class="drawer-toggle drawer-hamburger">
+        <span class="drawer-hamburger-icon"></span>
+      </button>
+      <?php echo main_menu(); ?>
+    </div>
     </div>
     <div class="container">
      <?php get_template_part('templates/slider', 'offers'); ?>

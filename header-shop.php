@@ -8,10 +8,10 @@
    <?php echo woocommerce_breadcrumb(); ?>
 
    <div class="header-right row justify-content-end">
-    <div class="header-phone col-md-5 col-lg-4 col-xl-2">
+    <div class="header-phone col-6 col-md-5 col-lg-4 col-xl-2 overflow-hidden float-left">
       <?php echo socials_float(); ?>          
     </div>
-    <div class="header-phone col-md-5 col-lg-3 col-xl-2 pr-0">
+    <div class="header-phone col-6 col-md-5 col-lg-3 col-xl-2 pr-0 overflow-hidden">
       <a class="header-phone__link" href="tel:74952054700">+7 (495) 205-47-00</a>
       <a class="header-phone__link" href="mailto:info@bio-metria.ru">info@bio-metria.ru</a>
     </div>
