@@ -64,11 +64,15 @@ if ( post_password_required() ) {
 				 *
 				 * @hooked woocommerce_show_product_sale_flash - 10
 				 * @hooked woocommerce_show_product_images - 20
+				 *
+				 * @hooked added woocommerce_template_single_price - 30
 
 				 */
 				do_action( 'woocommerce_before_single_product_summary' );
 				?>
 			</div>
+
+	<div class="text-right"><span class="product-images__info"></span></div>
 			<div class="product-info col-lg-12">
 
 				<?php
