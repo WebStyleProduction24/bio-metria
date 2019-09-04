@@ -72,7 +72,21 @@ if ( post_password_required() ) {
 				?>
 			</div>
 
-	<div class="text-right"><span class="product-images__info"></span></div>
+			<div class="text-right">
+				<div class="wsp24-arrow row"><div style="padding-top: 5px;"><span class="product-images__info"></span></div></div>
+
+				<?php 
+				/*
+		 		 * Added Hook: wsp24_product_price_cart
+		 		 *
+		 		 * @hooked added woocommerce_template_single_price - 10
+
+		 		 */
+
+				do_action('wsp24_product_price_cart');
+
+		?>
+	</div>
 			<div class="product-info col-lg-12">
 
 				<?php

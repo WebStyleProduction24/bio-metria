@@ -11,7 +11,8 @@ remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_ad
 
 //перемещаем положение цены на карточке товара
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_price', 30 );
+//add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_price', 30 );
+add_action( 'wsp24_product_price_cart', 'woocommerce_template_single_price', 10 );
 
 // Регистрируем хуки дополнительных вкладок в админке страницы товара
 add_action( 'woocommerce_product_options_general_product_data', 'art_woo_add_program_fields' );
