@@ -55,8 +55,8 @@ get_header( 'shop' );
 		 */
 		do_action( 'woocommerce_before_shop_loop' );
 
-		if ( is_shop()) // Если мы на странице магазина, то выводим список категорий продуктов
-		{
+ // Если мы на странице магазина, то выводим список категорий продуктов
+		if ( is_shop())	{
 			
 			echo $category_list_st;
 
@@ -72,41 +72,35 @@ get_header( 'shop' );
 
 			do_action( 'woocommerce_archive_description' );
 
-		} else if (is_product_taxonomy()) //Если мы на странице категории, то выводим подкатегории
-		{
+		} 
+ //Если мы на странице категории, то выводим подкатегории
+		else if (is_product_taxonomy()) {
 			$id = get_queried_object()->term_id;
 
 			if (empty(get_term_children($id, 'product_cat'))) {
 
-				content_product(); //Выводим список продуктов, если нет дочерних категорий
+				 //Выводим список продуктов, если нет дочерних категорий
+				content_product();
 
 			} else {
-
+		//Выводим подкатегории
 				echo $category_list_st;
 				wp_list_categories( $args = array(
 					'taxonomy' => 'product_cat',
 					'child_of' => $id,
 					'title_li' => false,
+					'depth' => 1,
 					'walker'	=> new WC_Product_Cat_List_Walker_Bio(),
 				) );
 				echo $category_list_en;
 
-				global $product;
-				$terms = get_the_terms( $product->item_id, 'product_cat' );
-				$term = array_shift( $terms );
-				$parent = $term->parent;
-
-				if (empty($parent)) {
-					content_product_parent_none();
-				}
-
+				content_product_parent_none();
 
 				category_after_list();
 			}
 
-		} else //В остальных случаях выводим цикл построения списка продуктов
-		{
-
+		} else {
+			//В остальных случаях выводим цикл построения списка продуктов
 			content_product();
 			
 		}
@@ -118,7 +112,6 @@ get_header( 'shop' );
 	*/
 	do_action( 'woocommerce_no_products_found' );
 }
-
 
 /**
 * Hook: woocommerce_sidebar.

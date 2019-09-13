@@ -21,6 +21,16 @@ function category_before_list() { ?>
 
 <?php }
 
+//Заголовок списка продуктов на странице категории
+function category_before_list_product() { ?>
+	<div class="category row">
+		<div class="title-line col-lg-12">
+			<h1 class="title">Продукция категории <?php woocommerce_page_title(); ?></h1>
+		</div>
+	</div>
+
+<?php }
+
 
 //Описание категории
 
@@ -113,41 +123,40 @@ function content_product() {
 
 	if ( wc_get_loop_prop( 'total' ) ) {
 		while ( have_posts() ) {
-				the_post();
-				do_action( 'woocommerce_shop_loop' );
-				wc_get_template_part( 'content', 'product' );
-			}
+			the_post();
+			do_action( 'woocommerce_shop_loop' );
+			wc_get_template_part( 'content', 'product' );
 		}
+	}
 
 	do_action( 'woocommerce_after_shop_loop' );
+
+	woocommerce_product_loop_end();
+
 	category_after_list();
 }
 
 
 
 function content_product_parent_none() {
-
+	// category_before_list_product();
+	
 	woocommerce_product_loop_start();
 
-	if ( wc_get_loop_prop( 'total' ) ) {
+	// if ( wc_get_loop_prop( 'total' ) ) {
 		while ( have_posts() ) {
-
 			the_post();
-			do_action( 'woocommerce_shop_loop' );
-
-			global $product;
-			$terms = get_the_terms( $product->item_id, 'product_cat' );
-			$term = array_shift( $terms );
-			$parent = $term->parent;
-
-			if (empty($parent)) {
+			
+			$id = get_queried_object()->term_id;
+			if( has_term( $id, 'product_cat') ) 
 				wc_get_template_part( 'content', 'product' );
-			}
-		}
+
+		// }
 	}
 
-}
+	woocommerce_product_loop_end();
 
+}
 
 
 //вывод плитки категорий
