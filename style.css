@@ -164,6 +164,7 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 .cat .category-list__name {
 	font-size: 14px;
 	min-height: 30px;
+	margin-top: 20px;
 }
 
 .cat .category-list__name:after {

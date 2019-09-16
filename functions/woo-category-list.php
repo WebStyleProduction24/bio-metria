@@ -18,7 +18,7 @@ function category_before_list() { ?>
 			<h1 class="title"><?php woocommerce_page_title(); ?></h1>
 		</div>
 	</div>
-
+	
 <?php }
 
 //Заголовок списка продуктов на странице категории
@@ -28,7 +28,7 @@ function category_before_list_product() { ?>
 			<h1 class="title">Продукция категории <?php woocommerce_page_title(); ?></h1>
 		</div>
 	</div>
-
+	
 <?php }
 
 
@@ -38,14 +38,14 @@ function category_after_list() { ?>
 	<div class="category-description row">
 		<?php if ( is_product_taxonomy() && 0 === absint( get_query_var( 'paged' ) ) ) {
 			$term = get_queried_object();
-
+			
 			if ( $term && ! empty( $term->description ) ) {
 				echo '<div class="category-desc col-lg-12">' . wc_format_content( $term->description ) . '</div>'; // WPCS: XSS ok.
 			}
 		} ?>
-
+		
 	</div>
-
+	
 <?php }
 
 //Изображения продукта
@@ -118,9 +118,9 @@ function free_consultation() {
 
 //Цикл вывода продуктов из archive-product.php
 function content_product() {
-
+	
 	woocommerce_product_loop_start();
-
+	
 	if ( wc_get_loop_prop( 'total' ) ) {
 		while ( have_posts() ) {
 			the_post();
@@ -128,41 +128,37 @@ function content_product() {
 			wc_get_template_part( 'content', 'product' );
 		}
 	}
-
+	
 	do_action( 'woocommerce_after_shop_loop' );
-
+	
 	woocommerce_product_loop_end();
-
+	
 	category_after_list();
 }
 
 
 
 function content_product_parent_none() {
-	// category_before_list_product();
 	
 	woocommerce_product_loop_start();
-
-	// if ( wc_get_loop_prop( 'total' ) ) {
-		while ( have_posts() ) {
-			the_post();
-			
-			$id = get_queried_object()->term_id;
-			if( has_term( $id, 'product_cat') ) 
-				wc_get_template_part( 'content', 'product' );
-
-		// }
+	
+	while ( have_posts() ) {
+		the_post();
+		
+		$id = get_queried_object()->term_id;
+		if( has_term( $id, 'product_cat') ) 
+			wc_get_template_part( 'content', 'product' );
 	}
-
+	
 	woocommerce_product_loop_end();
-
+	
 }
 
 
 //вывод плитки категорий
 
 class WC_Product_Cat_List_Walker_Bio extends Walker {
-
+	
 	/**
 	 * DB fields to use.
 	 *
@@ -173,7 +169,7 @@ class WC_Product_Cat_List_Walker_Bio extends Walker {
 		'id'     => 'term_id',
 		'slug'   => 'slug',
 	);
-
+	
 	/**
 	 * Start the element output.
 	 *
@@ -201,8 +197,8 @@ class WC_Product_Cat_List_Walker_Bio extends Walker {
 		$output .= '<p class="category-list__name">';
 		$output .= apply_filters( 'list_product_cats', $cat->name, $cat );
 		$output .= '</p></a>';
-}
-
+	}
+	
 	/**
 	 * Ends the element output, if needed.
 	 *
@@ -217,5 +213,5 @@ class WC_Product_Cat_List_Walker_Bio extends Walker {
 	public function end_el( &$output, $cat, $depth = 0, $args = array() ) {
 		$output .= "</div>\n";
 	}
-
+	
 }

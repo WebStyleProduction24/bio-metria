@@ -5,8 +5,6 @@
      <img src="<?php echo get_template_directory_uri();?>/img/logo.svg" class="header-logo__img" alt="">
    </a>
 
-   <?php echo woocommerce_breadcrumb(); ?>
-
    <div class="header-right row justify-content-end">
     <div class="header-phone col-6 col-md-5 col-lg-4 col-xl-2 overflow-hidden float-left">
       <?php echo socials_float(); ?>          
