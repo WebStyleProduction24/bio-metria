@@ -30,7 +30,7 @@
 				</a>
 			</div>
 
-			<div class="equipment-list__item col-md-4">
+	<div class="equipment-list__item col-md-4">
 				<div class="equipment-list__normal">
 					<svg class="equipment-list__img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129.81 121.1">
 						<use xlink:href="#equipment-5" />
