@@ -66,40 +66,40 @@
         <img class="partners__img" src="<?php echo get_template_directory_uri(); ?>/img/partner-5.png" alt="">
       </div>
     </div>
-    <!-- <div class="articles row">
+    <div class="articles row">
       <div class="title-line col-lg-12">
         <span class="title">Статьи</span>
       </div> 
       <div class="articles__item col-lg-3 col-md-6">
-        <img class="articles__img" src="<?php// echo get_template_directory_uri(); ?>/img/article-img.jpg" alt="">
+        <img class="articles__img" src="<?php echo get_template_directory_uri(); ?>/img/article-img.jpg" alt="">
         <span class="articles__date">08.08.2018</span>
         <span class="articles__title">Название новости</span>
         <p class="articles__text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой...</p>
         <a class="articles__link" href="/catalog"></a> 
       </div>
       <div class="articles__item col-lg-3 col-md-6">
-        <img class="articles__img" src="<?php// echo get_template_directory_uri(); ?>/img/article-img.jpg" alt="">
+        <img class="articles__img" src="<?php echo get_template_directory_uri(); ?>/img/article-img.jpg" alt="">
         <span class="articles__date">08.08.2018</span>
         <span class="articles__title">Название новости</span>
         <p class="articles__text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой...</p>
         <a class="articles__link" href="/catalog"></a>
       </div>
       <div class="articles__item col-lg-3 col-md-6">
-        <img class="articles__img" src="<?php// echo get_template_directory_uri(); ?>/img/article-img.jpg" alt="">
+        <img class="articles__img" src="<?php echo get_template_directory_uri(); ?>/img/article-img.jpg" alt="">
         <span class="articles__date">08.08.2018</span>
         <span class="articles__title">Название новости</span>
         <p class="articles__text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой...</p>
         <a class="articles__link" href="/catalog"></a>
       </div>
       <div class="articles__item col-lg-3 col-md-6">
-        <img class="articles__img" src="<?php// echo get_template_directory_uri(); ?>/img/article-img.jpg" alt="">
+        <img class="articles__img" src="<?php echo get_template_directory_uri(); ?>/img/article-img.jpg" alt="">
         <span class="articles__date">08.08.2018</span>
         <span class="articles__title">Название новости</span>
         <p class="articles__text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой...</p>
         <a class="articles__link" href="/catalog"></a>
       </div>
-      <a href="/catalog" class="btn articles_btn">Смотреть все новости</a>
-    </div> -->
+      <a href="ишщ" class="btn articles_btn">Смотреть все новости</a>
+    </div>
   </div>
 
 </section>
