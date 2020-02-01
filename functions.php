@@ -35,14 +35,10 @@ function fontawesome_style_loader_tag( $html, $handle ) {
 }
 add_filter( 'style_loader_tag', 'fontawesome_style_loader_tag', 10, 2 );
 
-function my_scripts_method(){
-	wp_enqueue_script( 'jquery' );
-}
-
 // Регистрируем JS
 function enqueue_scripts () {	
 	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery-1.11.3-min-js', get_template_directory_uri() . '/js/jquery-1.11.3.min.js');
+	wp_enqueue_script('jquery-2.2.0-min-js', 'https://code.jquery.com/jquery-2.2.0.min.js');
 	wp_enqueue_script('jquery-ui-min-js', get_template_directory_uri() . '/js/jquery-ui.min.js');
 	wp_enqueue_script('custom_script',	get_template_directory_uri() . '/js/widgets.js', array(),	null, true);
 	wp_enqueue_script('iscroll-min-js', 'https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js'); // iScroll	
