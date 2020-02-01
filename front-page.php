@@ -9,7 +9,7 @@
         <span class="title">О компании</span>
         <p class="about__text">
           <br>Если ваше внимание привлекла эта страница, значит вы точно понимаете, что уровень личной или коммерческой безопасности, учета и анализа приходящей информации должен переходить на более высокую ступень.  Концепция проверки биометрической идентичности не нова:  она существует уже тысячи лет. Даже то, что мы думаем об этом сегодня, имеет более чем десятилетнюю историю.</br>  
-Биометрия сегодня означает уникальные для каждого человека физиологические характеристики, считываемые специально разработанными приборами для определения или проверки личности.  Опираясь на свой многолетний опыт в технологиях распознавания и идентификации мы постоянно расширяем ассортимент продукции лучших производителей, представляя только самые высокоточные биометрические продукты
+          Биометрия сегодня означает уникальные для каждого человека физиологические характеристики, считываемые специально разработанными приборами для определения или проверки личности.  Опираясь на свой многолетний опыт в технологиях распознавания и идентификации мы постоянно расширяем ассортимент продукции лучших производителей, представляя только самые высокоточные биометрические продукты
         </p>
         <a class="btn text-right" href="/catalog">Подробнее о компании</a>
       </div>
@@ -66,40 +66,45 @@
         <img class="partners__img" src="<?php echo get_template_directory_uri(); ?>/img/partner-5.png" alt="">
       </div>
     </div>
-    <div class="articles row">
+    <div class="articles row">      
       <div class="title-line col-lg-12">
         <span class="title">Статьи</span>
-      </div> 
-      <div class="articles__item col-lg-3 col-md-6">
-        <img class="articles__img" src="<?php echo get_template_directory_uri(); ?>/img/article-img.jpg" alt="">
-        <span class="articles__date">08.08.2018</span>
-        <span class="articles__title">Название новости</span>
-        <p class="articles__text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой...</p>
-        <a class="articles__link" href="/catalog"></a> 
-      </div>
-      <div class="articles__item col-lg-3 col-md-6">
-        <img class="articles__img" src="<?php echo get_template_directory_uri(); ?>/img/article-img.jpg" alt="">
-        <span class="articles__date">08.08.2018</span>
-        <span class="articles__title">Название новости</span>
-        <p class="articles__text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой...</p>
-        <a class="articles__link" href="/catalog"></a>
-      </div>
-      <div class="articles__item col-lg-3 col-md-6">
-        <img class="articles__img" src="<?php echo get_template_directory_uri(); ?>/img/article-img.jpg" alt="">
-        <span class="articles__date">08.08.2018</span>
-        <span class="articles__title">Название новости</span>
-        <p class="articles__text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой...</p>
-        <a class="articles__link" href="/catalog"></a>
-      </div>
-      <div class="articles__item col-lg-3 col-md-6">
-        <img class="articles__img" src="<?php echo get_template_directory_uri(); ?>/img/article-img.jpg" alt="">
-        <span class="articles__date">08.08.2018</span>
-        <span class="articles__title">Название новости</span>
-        <p class="articles__text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой...</p>
-        <a class="articles__link" href="/catalog"></a>
-      </div>
-      <a href="ишщ" class="btn articles_btn">Смотреть все новости</a>
-    </div>
+      </div>       
+
+      <?php query_posts( 'post_type=post&posts_per_page=4' ); ?>
+      <?php get_excerpt_post(); ?>
+      <?php if( have_posts() ){ while( have_posts() ){ the_post(); ?>
+
+        <div class="articles__item col-lg-3 col-md-6">
+
+          <?php
+            if (has_post_thumbnail()) {
+              $post_thumbnail = get_the_post_thumbnail_url( $post, 'hompage-post-thumbnail' );
+            } else  $post_thumbnail = get_template_directory_uri().'/img/no-255_165.jpg';
+          ?>
+
+          <img class="articles__img" src="<?php echo $post_thumbnail; ?>" alt="">
+          <span class="articles__date"><?php the_time('d.m.Y'); ?></span>
+          <span class="articles__title"><?php the_title(); ?></span>
+          <?php the_excerpt(); ?>
+          <a class="articles__link" href="<?php the_permalink(); ?>"></a>
+
+        </div>
+
+      <?php } ?>
+      <a href="/nash-blog" class="btn articles_btn">Смотреть все статьи</a>
+    <?php } 
+    else 
+      echo "<h3>Статей нет.</h3>";
+    ?>
+
+    <?php wp_reset_query(); ?>
+
+
+  </div>
+
+
+
   </div>
 
 </section>
