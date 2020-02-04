@@ -71,28 +71,28 @@
         <span class="title">Статьи</span>
       </div>       
 
-      <?php query_posts( 'post_type=post&posts_per_page=4' ); ?>
+      <?php query_posts( 'post_type=post' ); ?>
       <?php get_excerpt_post(); ?>
-      <?php if( have_posts() ){ while( have_posts() ){ the_post(); ?>
+      <?php if( have_posts() ){?>
 
-        <div class="articles__item col-lg-3 col-md-6">
+        <section class="variable">
+          <?php while( have_posts() ){ the_post(); ?>
+            <div class="articles__item col-lg-3 col-md-6">
+              <?php
+                if (has_post_thumbnail()) {
+                  $post_thumbnail = get_the_post_thumbnail_url( $post, 'hompage-post-thumbnail' );
+                } else  $post_thumbnail = get_template_directory_uri().'/img/no-255_165.jpg';
+              ?>
+              <img class="articles__img" src="<?php echo $post_thumbnail; ?>" alt="">
+              <span class="articles__date"><?php the_time('d.m.Y'); ?></span>
+              <span class="articles__title"><?php the_title(); ?></span>
+              <?php the_excerpt(); ?>
+              <a class="articles__link" href="<?php the_permalink(); ?>"></a>
+            </div>
+          <?php } ?>
+        </section>
 
-          <?php
-            if (has_post_thumbnail()) {
-              $post_thumbnail = get_the_post_thumbnail_url( $post, 'hompage-post-thumbnail' );
-            } else  $post_thumbnail = get_template_directory_uri().'/img/no-255_165.jpg';
-          ?>
-
-          <img class="articles__img" src="<?php echo $post_thumbnail; ?>" alt="">
-          <span class="articles__date"><?php the_time('d.m.Y'); ?></span>
-          <span class="articles__title"><?php the_title(); ?></span>
-          <?php the_excerpt(); ?>
-          <a class="articles__link" href="<?php the_permalink(); ?>"></a>
-
-        </div>
-
-      <?php } ?>
-      <a href="/nash-blog" class="btn articles_btn">Смотреть все статьи</a>
+        <a href="/nash-blog" class="btn articles_btn">Смотреть все статьи</a>
     <?php } 
     else 
       echo "<h3>Статей нет.</h3>";
@@ -103,12 +103,7 @@
 
   </div>
 
-
-
   </div>
 
-</section>
-</main>
-
-
+</section></main>
 <?php get_footer(); ?>

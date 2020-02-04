@@ -119,7 +119,7 @@
     margin-bottom: 30px;
 }
 
-.slick-dots
+.slick-dots-news
 {
     position: absolute;
     bottom: -25px;
@@ -134,7 +134,7 @@
 
     text-align: center;
 }
-.slick-dots li
+.slick-dots-news li
 {
     position: relative;
 
@@ -147,7 +147,7 @@
 
     cursor: pointer;
 }
-.slick-dots li button
+.slick-dots-news li button
 {
     font-size: 0;
     line-height: 0;
@@ -165,17 +165,17 @@
     outline: none;
     background: transparent;
 }
-.slick-dots li button:hover,
-.slick-dots li button:focus
+.slick-dots-news li button:hover,
+.slick-dots-news li button:focus
 {
     outline: none;
 }
-.slick-dots li button:hover:before,
-.slick-dots li button:focus:before
+.slick-dots-news li button:hover:before,
+.slick-dots-news li button:focus:before
 {
     opacity: 1;
 }
-.slick-dots li button:before
+.slick-dots-news li button:before
 {
     font-family: 'slick';
     font-size: 6px;
@@ -197,8 +197,14 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.slick-dots li.slick-active button:before
+.slick-dots-news li.slick-active button:before
 {
     opacity: .75;
     color: black;
+}
+
+
+
+.variable {
+    width: 100%;
 }

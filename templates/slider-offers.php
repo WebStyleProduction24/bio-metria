@@ -10,7 +10,7 @@
 
 
 
-<div class="slider slider-main">
+<div class="slider-offers slider-main">
 
 	<?php
 
