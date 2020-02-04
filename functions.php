@@ -99,5 +99,5 @@ function devvn_product_cat_same_shop_edit_success( $term_id, $taxonomy ) {
 }
 
 //Регистрируем новые размеры изображений
-add_image_size( 'hompage-post-thumbnail', 255, 165, true );
-add_image_size( 'post-thumbnail', 276, 222, true );
+add_image_size( 'hompage-post-thumbnail', 255, 170, array('center', 'center') );
+add_image_size( 'post-thumbnail', 280, 187, array('center', 'center') );
