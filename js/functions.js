@@ -7,21 +7,13 @@ $(document).ready(function(){
 
 
 	$('.slider-offers').slick({
-
     dots: true,
-
     infinite: true,
-
     arrows: false,
-
     speed: 300,
-
     slidesToShow: 1,
-
     slidesToScroll: 1,
-
     autoplay: true,
-
   });
 
   $(".variable").slick({
@@ -32,14 +24,27 @@ $(document).ready(function(){
     arrows: true,
     prevArrow: '<button class="slick-prev" aria-label="Previous" type="button" style="color: #000">Previous2</button>',
     nextArrow: '<button class="slick-next" aria-label="Next" type="button" style="color: #000">Next2</button>',
-
+    responsive: [
+    {
+      breakpoint: 480,
+      settings: {        
+        slidesToShow: 1,
+      }
+    },
+    {
+      breakpoint: 960,
+      settings: {        
+        slidesToShow: 3,
+      }
+    }
+    ] 
   });
 
 
 
 
 
-	$(".equipment-slider").slick({
+  $(".equipment-slider").slick({
 
     dots: false,
 
