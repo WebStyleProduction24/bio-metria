@@ -22,8 +22,8 @@ $(document).ready(function(){
     autoplay: true,
     autoplaySpeed: 2000,
     arrows: true,
-    prevArrow: '<button class="slick-prev" aria-label="Previous" type="button" style="color: #000">Previous2</button>',
-    nextArrow: '<button class="slick-next" aria-label="Next" type="button" style="color: #000">Next2</button>',
+    prevArrow: '<button class="slick-prev icon-chevron-right" aria-label="Previous" type="button" style="color: #000">Previous2</button>',
+    nextArrow: '<button class="slick-next icon-chevron-thin-right" aria-label="Next" type="button" style="color: #000">Next2</button>',
     responsive: [
     {
       breakpoint: 480,

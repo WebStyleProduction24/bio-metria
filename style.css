@@ -18,9 +18,17 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 	
 } */
 
-
-
-
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?8d8ldp');
+  src:  url('fonts/icomoon.eot?8d8ldp#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?8d8ldp') format('truetype'),
+    url('fonts/icomoon.woff?8d8ldp') format('woff'),
+    url('fonts/icomoon.svg?8d8ldp#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
 
 .product.row .text-right {
 	margin-top: 0;
