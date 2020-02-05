@@ -20,7 +20,7 @@ $(document).ready(function(){
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 5000,
     arrows: true,
     prevArrow: '<button class="slick-prev icon-chevron-right" aria-label="Previous" type="button" style="color: #000">Previous2</button>',
     nextArrow: '<button class="slick-next icon-chevron-thin-right" aria-label="Next" type="button" style="color: #000">Next2</button>',
