@@ -11603,9 +11603,8 @@ body {
 }
 
 .articles__title {
-
   font-size: 18px;
-
+  color: #292929;
   font-weight: bold;
 
   display: block;
@@ -11629,11 +11628,32 @@ body {
 }
 
 .articles__text {
-
   padding: 0;
 
 }
 
+@media (min-width: 525px) {
+  .articles__text {
+    min-height: 155px;
+  }
+}
+@media (min-width: 993px) {
+  .articles__title {
+    min-height: 51px;
+  }
+  .articles__text {
+    min-height: 140px;
+  }
+}
+
+@media (min-width: 1160px) {
+  .articles__title {
+    min-height: 34px;
+  }
+  .articles__text {
+    min-height: 105px;
+  }
+}
 .articles__link {
 
   background: url(../img/arrow.svg) no-repeat;

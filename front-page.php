@@ -83,9 +83,9 @@
                   $post_thumbnail = get_the_post_thumbnail_url( $post, 'hompage-post-thumbnail' );
                 } else  $post_thumbnail = get_template_directory_uri().'/img/no-255_165.jpg';
               ?>
-              <img class="articles__img" src="<?php echo $post_thumbnail; ?>" alt="">
+              <a href="<?php echo get_permalink(); ?>"><img class="articles__img" src="<?php echo $post_thumbnail; ?>" alt=""></a>
               <span class="articles__date"><?php the_time('d.m.Y'); ?></span>
-              <span class="articles__title"><?php the_title(); ?></span>
+              <a href="<?php echo get_permalink(); ?>" class="articles__title"><span><?php the_title(); ?></span></a>
               <?php the_excerpt(); ?>
               <a class="articles__link" href="<?php the_permalink(); ?>"></a>
             </div>
