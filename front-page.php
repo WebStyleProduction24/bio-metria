@@ -66,7 +66,7 @@
         <img class="partners__img" src="<?php echo get_template_directory_uri(); ?>/img/partner-5.png" alt="">
       </div>
     </div>
-    <div class="articles row">      
+    <div class="articles row mb-5">      
       <div class="title-line col-lg-12">
         <span class="title">Статьи</span>
       </div>       
@@ -103,6 +103,13 @@
 
   </div>
 
+  <div id="feedback">
+    <a name="feedback"></a>
+
+      <div class="title-line mb-5">
+        <span class="title">Обратная связь</span>
+      </div>       
+    <?php echo do_shortcode('[contact-form-7 id="10433" title="Контактная форма 1"]'); ?>
   </div>
 
 </section></main>

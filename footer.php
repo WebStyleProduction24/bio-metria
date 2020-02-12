@@ -29,7 +29,7 @@
     <a class="footer-social__link"><i class="fab fa-telegram-plane"></i></a>
   </div>  
 
-  <a class="btn footer_btn" href="#">Заказать звонок</a>
+  <a class="btn footer_btn" href="#feedback">Обратная связь</a>
 </div>
 </div> 
 <div class="footer-bottom container-fluid">

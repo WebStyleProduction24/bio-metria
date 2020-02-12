@@ -8736,42 +8736,25 @@ label:hover {
 
 
 
-input[type="text"],
-
-input[type="password"],
-
-input[type="email"],
-
-input[type="tel"],
-
-input[type="search"],
-
-textarea,
-
-select,
-
-.input {
-
-  background-color: #fff;
-
-  border: 1px solid #292929;
-
+input[type="text"] ,input[type="password"], input[type="email"], input[type="tel"], input[type="search"],
+textarea, select, .input {
+  border: 1px solid #adbfd0;
   color: #4171af;
-
   line-height: 17px;
-
   width: 100%;
-
   display: block;
-
   -webkit-transition: all .3s ease-in-out;
-
   transition: all .3s ease-in-out;
-
   -webkit-appearance: none;
-
-  border-radius: 0;
-
+  border-radius: 20px;
+  height: 40px;
+  padding: 0 10px;
+}
+textarea {
+  padding: 10px;
+}
+span.wpcf7-not-valid-tip {
+  padding: 0 10px;
 }
 
 input[type="text"]::-webkit-input-placeholder,
