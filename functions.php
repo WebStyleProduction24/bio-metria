@@ -39,7 +39,6 @@ add_filter( 'style_loader_tag', 'fontawesome_style_loader_tag', 10, 2 );
 
 // Регистрируем JS
 function enqueue_scripts () {	
-	wp_deregister_script('jquery');
 	wp_enqueue_script('jquery-2.2.0-min-js', 'https://code.jquery.com/jquery-2.2.0.min.js');
 	wp_enqueue_script('jquery-ui-min-js', get_template_directory_uri() . '/js/jquery-ui.min.js');
 	wp_enqueue_script('custom_script',	get_template_directory_uri() . '/js/widgets.js', array(),	null, true);

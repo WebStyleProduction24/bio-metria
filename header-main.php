@@ -31,16 +31,16 @@
       data-height="400" 
       data-max-width="85%"
       data-max-height="85%"
-      data-particle-gap="3"
+      data-particle-gap="1"
       data-mouse-force="80"
       data-noise="30"
-      data-gravity="0.05"
+      data-gravity="0.14"
       data-init-position="bottom"
       data-init-direction="bottom"
       data-fade-position="random"
       data-fade-direction="random"
 
-      src="<?php echo get_template_directory_uri(); ?>/pic/palec.png" display:none;>
+      src="<?php echo get_template_directory_uri(); ?>/pic/1.png" display:none;>
 
     </div>
   </div>
