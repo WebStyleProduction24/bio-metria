@@ -184,7 +184,7 @@ class WC_Product_Cat_List_Walker_Bio extends Walker {
 			$image_url .= wc_placeholder_img_src();
 		} else {
 			$alt = 
-			$image_url = wp_get_attachment_image_url( $thumb_ID );
+			$image_url = wp_get_attachment_image_url( $thumb_ID, array('300', '300' ) );
 		}
 		$output .= '<div class="category__item col-lg-3 cat">';
 		$output .= '<a href="' . get_term_link( $cat_id, $this->tree_type ) . '">';

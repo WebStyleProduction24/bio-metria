@@ -1,4 +1,3 @@
-
 <main role="main">
   <!-- HEADER -->
   <header class="header">
@@ -29,8 +28,8 @@
       class="next-particle"
       data-width="500"
       data-height="400" 
-      data-max-width="85%"
-      data-max-height="85%"
+      data-max-width="100%"
+      data-max-height="100%"
       data-particle-gap="1"
       data-mouse-force="80"
       data-noise="30"
@@ -40,7 +39,7 @@
       data-fade-position="random"
       data-fade-direction="random"
 
-      src="<?php echo get_template_directory_uri(); ?>/pic/1.png" display:none;>
+      src="<?php echo get_template_directory_uri(); ?>/pic/5.png" display:none;>
 
     </div>
   </div>
