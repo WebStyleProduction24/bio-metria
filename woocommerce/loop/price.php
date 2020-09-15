@@ -23,5 +23,5 @@ global $product;
 ?>
 
 <?php if ( $price_html = $product->get_price_html() ) : ?>
-	<p class="category-list__price">Цена: <span class="category-list__price_count">до <?php echo $price_html; ?></span></p>
+	<p class="category-list__price">Цена: <span class="category-list__price_count"><?php echo $price_html; ?></span></p>
 <?php endif; ?>

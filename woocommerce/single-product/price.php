@@ -27,6 +27,6 @@ global $product;
 
 <div class="product-price">
 	<span class="product-price__name">Цена:</span>
-	<span class="product-price__value">до <?php echo $product->get_price_html(); ?></span>
+	<span class="product-price__value"><?php echo $product->get_price_html(); ?></span>
 	<?php echo button_consultation(); ?>
 </div>
