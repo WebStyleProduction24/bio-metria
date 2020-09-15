@@ -4,7 +4,7 @@
 
 <section class="main">
   <div class="container">
-    <div class="about row">
+   <!--  <div class="about row">
       <div class="col-lg-6">
         <span class="title">О компании</span>
         <p class="about__text">
@@ -14,9 +14,9 @@
         <a class="btn text-right" href="/catalog">Подробнее о компании</a>
       </div>
       <div class="col-lg-6">
-        <img class="about__img" src="<?php echo get_template_directory_uri(); ?>/img/about-img.jpg" alt="">
+        <img class="about__img" src="<?php// echo get_template_directory_uri(); ?>/img/about-img.jpg" alt="">
       </div>
-    </div>
+    </div> -->
     <!-- <div class="proposition row">
       <div class="title-line col-lg-12">
         <span class="title title_bg">ПРЕДЛОЖЕНИЯ ПОД КЛЮЧ</span>
@@ -54,18 +54,18 @@
         </div>
       </div>
     </div> -->
-    <div class="partners row">
+<!--     <div class="partners row">
       <div class="title-line col-lg-12">
         <span class="title">Наши партнеры</span>
       </div> 
       <div class="partners__list col-lg-12">
-        <img class="partners__img" src="<?php echo get_template_directory_uri(); ?>/img/partner-1.png" alt="">
-        <img class="partners__img" src="<?php echo get_template_directory_uri(); ?>/img/partner-2.png" alt="">
-        <img class="partners__img" src="<?php echo get_template_directory_uri(); ?>/img/partner-3.png" alt="">
-        <img class="partners__img" src="<?php echo get_template_directory_uri(); ?>/img/partner-4.png" alt="">
-        <img class="partners__img" src="<?php echo get_template_directory_uri(); ?>/img/partner-5.png" alt="">
+        <img class="partners__img" src="<?php // echo get_template_directory_uri(); ?>/img/partner-1.png" alt="">
+        <img class="partners__img" src="<?php // echo get_template_directory_uri(); ?>/img/partner-2.png" alt="">
+        <img class="partners__img" src="<?php // echo get_template_directory_uri(); ?>/img/partner-3.png" alt="">
+        <img class="partners__img" src="<?php // echo get_template_directory_uri(); ?>/img/partner-4.png" alt="">
+        <img class="partners__img" src="<?php // echo get_template_directory_uri(); ?>/img/partner-5.png" alt="">
       </div>
-    </div>
+    </div> -->
     <div class="articles row mb-5">      
       <div class="title-line col-lg-12">
         <span class="title">Статьи</span>
