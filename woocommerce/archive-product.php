@@ -35,6 +35,11 @@ get_header( 'shop' );
 
 		<div class="d-none d-sm-block"><?php echo category_list_menu(); ?></div>
 
+		<?php if ( is_product_category( 53 ) ) { ?>
+			<iFrame src = "<?php echo get_template_directory_uri(); ?>/infographics/index.php" allow="fullscreen" width="100%" height="3045px;"></iFrame>
+		<?php } ?>
+
+
 		<?php
 
 		get_posts( array('post_type' => 'product_cat'));
