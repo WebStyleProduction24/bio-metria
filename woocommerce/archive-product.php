@@ -34,11 +34,14 @@ get_header( 'shop' );
 	<div class="container">
 
 		<div class="d-none d-sm-block"><?php echo category_list_menu(); ?></div>
+	</div>
 
+	<div class="content-infografics">
 		<?php if ( is_product_category( 53 ) ) { ?>
-			<iFrame src = "<?php echo get_template_directory_uri(); ?>/infographics/index.php" allow="fullscreen" width="100%" height="3045px;"></iFrame>
+			<iFrame src = "<?php echo get_template_directory_uri(); ?>/infographics/index.php"></iFrame>
 		<?php } ?>
-
+	</div>
+	<div class="container">
 
 		<?php
 
