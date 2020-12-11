@@ -231,7 +231,7 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
   }
   @media (max-width: 1199px) {
   	iframe {
-  		height: 3100px;
+  		height: 3200px;
   	}
   }
   @media (min-width: 992px) and (max-width: 1199px) {
@@ -254,7 +254,7 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 
   @media (max-width: 929px) {
   	iframe {
-  		height: 3700px;
+  		height: 3600px;
   	}
   	.header-right .header-menu__item {
   		display: block;
@@ -263,7 +263,7 @@ GitHub Theme URI: https://github.com/WebStyleProduction24/bio-metria
 
   @media (max-width: 575px) {
   	iframe {
-  		height: 7400px;
+  		height: 7460px;
   	}
   	.overflow-hidden {
   		overflow: hidden!important;

@@ -10734,6 +10734,7 @@ body {
 .product-images {
 
   position: relative;
+  padding-bottom: 45px;
 
 }
 
@@ -10791,8 +10792,7 @@ body {
 
 .product-images .slick-next {
 
-  right: 0;
-
+  right: calc(50% - 200px);
   background: url(../img/arrow-gallery.png);
 
 }
@@ -10917,7 +10917,7 @@ body {
 
   .product-images .slick-prev {
 
-    right: calc(50% + 55px);
+    left: calc(50% - 65px);
 
   }
 
